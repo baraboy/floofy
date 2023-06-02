@@ -19,7 +19,7 @@ struct ContentView: View {
                     Text("Scan")
                 }
                 .tag(0)
-            Text("Reminder Tab")
+            ReminderView()
                 .tabItem{
                     Image(systemName: "bell")
                     Text("Reminder")

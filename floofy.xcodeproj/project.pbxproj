@@ -11,6 +11,8 @@
 		338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D492A21F7C7000778EE /* ContentView.swift */; };
 		338C7D4C2A21F7C8000778EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4B2A21F7C8000778EE /* Assets.xcassets */; };
 		338C7D4F2A21F7C8000778EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */; };
+		F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793222A29136B00F5F5EC /* ReminderView.swift */; };
+		F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793252A2916D200F5F5EC /* ReminderModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		338C7D492A21F7C7000778EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		338C7D4B2A21F7C8000778EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F79793222A29136B00F5F5EC /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		F79793252A2916D200F5F5EC /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +55,12 @@
 		338C7D462A21F7C7000778EE /* floofy */ = {
 			isa = PBXGroup;
 			children = (
+				F79793242A2916C100F5F5EC /* Model */,
 				338C7D472A21F7C7000778EE /* floofyApp.swift */,
 				338C7D492A21F7C7000778EE /* ContentView.swift */,
 				338C7D4B2A21F7C8000778EE /* Assets.xcassets */,
 				338C7D4D2A21F7C8000778EE /* Preview Content */,
+				F79793222A29136B00F5F5EC /* ReminderView.swift */,
 			);
 			path = floofy;
 			sourceTree = "<group>";
@@ -65,6 +71,14 @@
 				338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F79793242A2916C100F5F5EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F79793252A2916D200F5F5EC /* ReminderModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */,
+				F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */,
 				338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */,
+				F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
