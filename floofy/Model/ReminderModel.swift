@@ -11,6 +11,7 @@ struct ReminderModel: Identifiable {
     var id: Int
     var nameActivity: String
     var name: String
+    var repeatWhatDay: String
     
     var enable: Bool = false
 }
