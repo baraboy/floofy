@@ -12,6 +12,7 @@ struct ReminderView: View {
     
     
     @State var reminders = ResourcerLoader.shared.loadReminderList()
+    @State var showView = false
     
     var body: some View {
         
@@ -46,7 +47,6 @@ struct ReminderView: View {
                             
                             Button {
                                 
-                                
                             } label: {
                                 Image(systemName: "trash")
                             } .tint(.red)
@@ -59,9 +59,12 @@ struct ReminderView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
+                        showView.toggle()
                     } label: {
                         Image(systemName: "plus")
+                    }
+                    .sheet(isPresented: $showView) {
+                        AddReminderView()
                     }
                 }
             }
