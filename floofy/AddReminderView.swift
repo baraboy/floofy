@@ -6,8 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AddReminderView: View {
+    
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var reminderItems: FetchedResults<ReminderItem>
+    @Environment(\.dismiss) var dismiss
+    
     
     @State private var categoryIndex = 0
     var categorySelection = ["Grooming", "Clean the Cage"]
@@ -77,6 +83,18 @@ struct AddReminderView: View {
                     
                 
                 Button(action: {
+                    
+                    let reminder = ReminderItem(context: moc)
+                    
+                    reminder.id = UUID()
+                    reminder.name = petNameSelection[petNameIndex]
+                    reminder.label = categorySelection[categoryIndex]
+                    reminder.date_item = dateReminder
+//                    reminder.enable = true
+                    
+                    try? moc.save()
+                    
+                    dismiss()
                     
                 }) {
                     Text("Add Reminder")

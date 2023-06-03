@@ -14,6 +14,8 @@
 		F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793222A29136B00F5F5EC /* ReminderView.swift */; };
 		F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793252A2916D200F5F5EC /* ReminderModel.swift */; };
 		F79793282A29A33E00F5F5EC /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793272A29A33E00F5F5EC /* AddReminderView.swift */; };
+		F797932B2A2B56FD00F5F5EC /* Reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */; };
+		F797932D2A2B57A300F5F5EC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797932C2A2B57A300F5F5EC /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		F79793222A29136B00F5F5EC /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		F79793252A2916D200F5F5EC /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		F79793272A29A33E00F5F5EC /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
+		F797932A2A2B56FD00F5F5EC /* Reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reminder.xcdatamodel; sourceTree = "<group>"; };
+		F797932C2A2B57A300F5F5EC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				338C7D4D2A21F7C8000778EE /* Preview Content */,
 				F79793222A29136B00F5F5EC /* ReminderView.swift */,
 				F79793272A29A33E00F5F5EC /* AddReminderView.swift */,
+				F797932C2A2B57A300F5F5EC /* DataController.swift */,
+				F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */,
 			);
 			path = floofy;
 			sourceTree = "<group>";
@@ -154,11 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F797932D2A2B57A300F5F5EC /* DataController.swift in Sources */,
 				338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */,
 				F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */,
 				338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */,
 				F79793282A29A33E00F5F5EC /* AddReminderView.swift in Sources */,
 				F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */,
+				F797932B2A2B56FD00F5F5EC /* Reminder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +367,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F797932A2A2B56FD00F5F5EC /* Reminder.xcdatamodel */,
+			);
+			currentVersion = F797932A2A2B56FD00F5F5EC /* Reminder.xcdatamodel */;
+			path = Reminder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 338C7D3C2A21F7C7000778EE /* Project object */;
 }

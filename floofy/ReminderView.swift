@@ -9,50 +9,53 @@ import SwiftUI
 
 struct ReminderView: View {
     
-    
-    
-    @State var reminders = ResourcerLoader.shared.loadReminderList()
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var reminderItems: FetchedResults<ReminderItem>
+
     @State var showView = false
     
     var body: some View {
         
         NavigationStack {
             VStack {
-                List {
+                List() {
                     
-                    ForEach(0..<reminders.count) { index in
+                    ForEach(reminderItems) { reminder in
                         HStack {
                             VStack(alignment: .leading) {
-                                   
-                                Text("\(reminders[index].nameActivity)")
-                                
+
+                                Text(reminder.label ?? "Unknown")
+
                                 HStack() {
-                                    Text("\(reminders[index].name),")
+                                    Text(reminder.name ?? "Unknown")
                                         .fontWeight(.ultraLight)
-                                    
-                                    Text("\(reminders[index].repeatWhatDay)").fontWeight(.ultraLight)
-                                    
+
+                                    Text("Dummy data").fontWeight(.ultraLight)
+
                                     }
                                 }
-                                
-                                
+
                             Spacer()
                             Spacer()
-                          
-                            Toggle("Activate", isOn: $reminders[index].enable)
+
+                            Toggle("Activate", isOn: .constant(true))
                                                    .labelsHidden()
-                            
+
                         }
-                        .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
-                            
-                            Button {
-                                
-                            } label: {
-                                Image(systemName: "trash")
-                            } .tint(.red)
-                        })
+//                        .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
+//
+//                            Button {
+//                                
+//                            } label: {
+//                                Image(systemName: "trash")
+//                            } .tint(.red)
+//                        })
                     }
+                    .onDelete(perform: deleteReminder)
+                    
+                    
                 }
+                
             }
             .listStyle(.plain)
             .navigationTitle("Reminders")
@@ -73,16 +76,13 @@ struct ReminderView: View {
         
     }
     
-    func delete (at offsets: IndexSet) {
-        reminders.remove(atOffsets: offsets)
-    }
-}
-
-struct ResourcerLoader {
-    static private(set) var shared = ResourcerLoader()
-    
-    func loadReminderList() -> [ReminderModel] {
-        return [.init(id: 1, nameActivity: "Grooming", name: "Hengki", repeatWhatDay: "Weekly", enable: true), .init(id: 2, nameActivity: "Clean the Cage", name: "Abu", repeatWhatDay: "Monthly",enable: false)]
+    func deleteReminder(at offsets: IndexSet) {
+        for offset in offsets {
+            let reminder = reminderItems[offset]
+            moc.delete(reminder)
+        }
+        
+        try? moc.save()
     }
 }
 
