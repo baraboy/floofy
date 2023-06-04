@@ -49,7 +49,6 @@ struct AddReminderView: View {
                             }
                         }
                     }
-
                     
                     Section() {
                         
@@ -82,7 +81,6 @@ struct AddReminderView: View {
                     .shadow(radius: 2)
                     .scrollContentBackground(.hidden)
                     
-                
                 Button(action: {
                     
                     let reminder = ReminderItem(context: moc)
@@ -91,6 +89,7 @@ struct AddReminderView: View {
                     reminder.name = petNameSelection[petNameIndex]
                     reminder.label = categorySelection[categoryIndex]
                     reminder.date_item = dateReminder
+                    reminder.repeat_item = repeatReminderSelection[repeatReminderIndex]
 //                    reminder.enable = true
                     
                     try? moc.save()
@@ -110,28 +109,45 @@ struct AddReminderView: View {
                 .buttonStyle(.borderedProminent)
                 
                 Spacer(minLength: 70)
-                
             }
-            
         }
     }
     
     func setNotication(label: String, date: Date, namePet: String) {
+        
+        let triggerWeekly = Calendar.current.dateComponents([.weekday, .hour, .minute, .second], from: date)
+        
+        let triggerMonthly = Calendar.current.dateComponents([.month, .hour, .minute, .second], from: date)
+        
         let content = UNMutableNotificationContent()
         content.title = "Hey this is the time!"
-        content.sound = .defaultCritical
+        content.sound = .defaultRingtone
         content.body = "\(label) \(namePet)"
-        //"Let's walk with your dog!"
         
         let targetDate = date
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
         
-        let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-            if error != nil {
-                print("Something went wrong")
-            }
-        })
+        if repeatReminderIndex == 0 {
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
+            
+            let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+                if error != nil {
+                    print("Something went wrong")
+                }
+            })
+            
+        } else if repeatReminderIndex == 1 {
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerMonthly, repeats: true)
+            
+            let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+                if error != nil {
+                    print("Something went wrong")
+                }
+            })
+        }
     }
 }
 

@@ -31,7 +31,7 @@ struct ReminderView: View {
                                     Text(reminder.name ?? "Unknown")
                                         .fontWeight(.ultraLight)
 
-                                    Text("Dummy data").fontWeight(.ultraLight)
+                                    Text(reminder.repeat_item ?? "Unknown").fontWeight(.ultraLight)
                                     }
                                 }
 
@@ -45,22 +45,6 @@ struct ReminderView: View {
                     }
                     .onDelete(perform: deleteReminder)
                 }
-                
-                Button {
-                    
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
-                        if success {
-                            
-                            self.scheduleTest()
-                        } else if error != nil{
-                            print("error occurr ed")
-                        }
-                    })
-                    
-                } label: {
-                    Text("Tes Notification")
-                }
-                
             }
             .listStyle(.plain)
             .navigationTitle("Reminders")
@@ -68,6 +52,7 @@ struct ReminderView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showView.toggle()
+                        
                         // code for notification
                         scheduleNotification()
                         
@@ -112,24 +97,6 @@ struct ReminderView: View {
         UNUserNotificationCenter.current().add(request)
     }
     
-    func scheduleTest() {
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Hey this is the time!"
-        content.sound = .defaultCritical
-        content.body = "Let's walk with your dog!"
-        
-        let targetDate = Date().addingTimeInterval(5)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-            if error != nil {
-                print("Something went wrong")
-            }
-        })
-    }
-    
     func deleteReminder(at offsets: IndexSet) {
         for offset in offsets {
             let reminder = reminderItems[offset]
@@ -138,6 +105,7 @@ struct ReminderView: View {
         
         try? moc.save()
     }
+
 }
 
 struct ReminderView_Previews: PreviewProvider {
