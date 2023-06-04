@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import UserNotifications
 
 struct AddReminderView: View {
     
@@ -52,11 +53,11 @@ struct AddReminderView: View {
                     
                     Section() {
                         
-                        DatePicker(selection: $dateReminder, in: ...Date.now, displayedComponents: .date) {
+                        DatePicker(selection: $dateReminder, in: ...Date.distantFuture, displayedComponents: .date) {
                             Text("Date")
                         }
                         
-                        DatePicker(selection: $dateReminder, in: ...Date.now, displayedComponents: .hourAndMinute){
+                        DatePicker(selection: $dateReminder, in: ...Date.distantFuture, displayedComponents: .hourAndMinute){
                             Text("Time")
                         }
                         
@@ -94,6 +95,8 @@ struct AddReminderView: View {
                     
                     try? moc.save()
                     
+                    setNotication(label: categorySelection[categoryIndex], date: dateReminder, namePet: petNameSelection[petNameIndex])
+                    
                     dismiss()
                     
                 }) {
@@ -111,6 +114,24 @@ struct AddReminderView: View {
             }
             
         }
+    }
+    
+    func setNotication(label: String, date: Date, namePet: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "Hey this is the time!"
+        content.sound = .defaultCritical
+        content.body = "\(label) \(namePet)"
+        //"Let's walk with your dog!"
+        
+        let targetDate = date
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+            if error != nil {
+                print("Something went wrong")
+            }
+        })
     }
 }
 
