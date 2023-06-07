@@ -6,19 +6,6 @@
 	objectVersion = 56;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		330373E22A2CE1720094B80B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330373E12A2CE1720094B80B /* OnboardingView.swift */; };
-		33708EFE2A2F812B000BAC2B /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33708EFD2A2F812B000BAC2B /* ArticleView.swift */; };
-		338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D472A21F7C7000778EE /* floofyApp.swift */; };
-		338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D492A21F7C7000778EE /* ContentView.swift */; };
-		338C7D4C2A21F7C8000778EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4B2A21F7C8000778EE /* Assets.xcassets */; };
-		338C7D4F2A21F7C8000778EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */; };
-		F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793222A29136B00F5F5EC /* ReminderView.swift */; };
-		F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793252A2916D200F5F5EC /* ReminderModel.swift */; };
-		F79793282A29A33E00F5F5EC /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793272A29A33E00F5F5EC /* AddReminderView.swift */; };
-		F797932D2A2B57A300F5F5EC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797932C2A2B57A300F5F5EC /* DataController.swift */; };
-		F79793312A2CC1FC00F5F5EC /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793302A2CC1FC00F5F5EC /* PetView.swift */; };
-/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		330373E12A2CE1720094B80B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
