@@ -16,7 +16,7 @@ struct SplashView: View {
             Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255)
                 .ignoresSafeArea()
             if self.isActive {
-                ContentView()
+                OnboardingView()
             } else {
                 Image("splashImage")
                     .resizable()

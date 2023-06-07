@@ -38,7 +38,7 @@ struct ContentView: View {
                         Text("Articles")
                     }
                     .tag(3)
-                Text("Pet Tab")
+                PetView()
                     .tabItem{
                         Image(systemName: "pawprint")
                         Text("Pet")

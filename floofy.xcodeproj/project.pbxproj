@@ -79,13 +79,7 @@
 				F79793222A29136B00F5F5EC /* ReminderView.swift */,
 				338C7D4B2A21F7C8000778EE /* Assets.xcassets */,
 				338C7D4D2A21F7C8000778EE /* Preview Content */,
-<<<<<<< Updated upstream
-=======
-				F79793222A29136B00F5F5EC /* ReminderView.swift */,
 				F79793302A2CC1FC00F5F5EC /* PetView.swift */,
-				F79793272A29A33E00F5F5EC /* AddReminderView.swift */,
-				F797932C2A2B57A300F5F5EC /* DataController.swift */,
->>>>>>> Stashed changes
 				F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */,
 				F752BB582A2F728B0062F4B7 /* SplashView.swift */,
 			);
