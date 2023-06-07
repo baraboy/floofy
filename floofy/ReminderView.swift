@@ -18,38 +18,22 @@ struct ReminderView: View {
     var body: some View {
         
         NavigationStack {
-            VStack {
-                List() {
+            
+            VStack(spacing: 20) {
+                
+                if reminderItems.isEmpty {
                     
-                    ForEach(reminderItems) { reminder in
-                        HStack {
-                            VStack(alignment: .leading) {
-
-                                Text(reminder.label ?? "Unknown")
-
-                                HStack() {
-                                    Text(reminder.name ?? "Unknown")
-                                        .fontWeight(.ultraLight)
-
-                                    Text(reminder.repeat_item ?? "Unknown").fontWeight(.ultraLight)
-                                    }
-                                }
-
-                            Spacer()
-                            Spacer()
-
-                            Toggle("Activate", isOn: .constant(true))
-                                .labelsHidden()
-
-                        }
-                    }
-                    .onDelete(perform: deleteReminder)
-                }
-            }
-            .listStyle(.plain)
-            .navigationTitle("Reminders")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                    Spacer()
+                    
+                    Image("reminderImage")
+                        .resizable()
+                        .frame(width: 269,height: 328)
+                    
+                    Text("Looks like you did not have any pets yet")
+                        .font(.system(size: 17, weight: .semibold))
+                    
+                    Spacer(minLength: 15)
+                    
                     Button {
                         showView.toggle()
                         
@@ -57,13 +41,70 @@ struct ReminderView: View {
                         scheduleNotification()
                         
                     } label: {
-                        Image(systemName: "plus")
+                        Text("Add Reminder")
+                            
+                            .background(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255))
+                            .foregroundColor(.white)
+                            .fontWeight(.semibold)
+                            .frame(width: 300 , height: 40 ,alignment: .center)
                     }
                     .sheet(isPresented: $showView) {
                         AddReminderView()
                     }
+                    .buttonStyle(.borderedProminent)
+                    
+                    Spacer()
+                        
+                } else {
+                    VStack {
+                        List() {
+                            
+                            ForEach(reminderItems) { reminder in
+                                HStack {
+                                    VStack(alignment: .leading) {
+
+                                        Text(reminder.label ?? "Unknown")
+
+                                        HStack() {
+                                            Text(reminder.name ?? "Unknown")
+                                                .fontWeight(.ultraLight)
+
+                                            Text(reminder.repeat_item ?? "Unknown").fontWeight(.ultraLight)
+                                            }
+                                        }
+
+                                    Spacer()
+                                    Spacer()
+
+                                    Toggle("Activate", isOn: .constant(true))
+                                        .labelsHidden()
+
+                                }
+                            }
+                            .onDelete(perform: deleteReminder)
+                        }
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                showView.toggle()
+                                
+                                // code for notification
+//                                scheduleNotification()
+                                
+                            } label: {
+                                Image(systemName: "plus")
+                            }
+                            .sheet(isPresented: $showView) {
+                                AddReminderView()
+                            }
+                        }
+                    }
                 }
             }
+            .listStyle(.plain)
+            .navigationTitle("Reminders")
+            
         }
         .navigationBarTitleDisplayMode(.large)
         

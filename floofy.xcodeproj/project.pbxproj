@@ -13,11 +13,13 @@
 		338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D492A21F7C7000778EE /* ContentView.swift */; };
 		338C7D4C2A21F7C8000778EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4B2A21F7C8000778EE /* Assets.xcassets */; };
 		338C7D4F2A21F7C8000778EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */; };
+		F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB582A2F728B0062F4B7 /* SplashView.swift */; };
 		F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793222A29136B00F5F5EC /* ReminderView.swift */; };
 		F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793252A2916D200F5F5EC /* ReminderModel.swift */; };
 		F79793282A29A33E00F5F5EC /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793272A29A33E00F5F5EC /* AddReminderView.swift */; };
 		F797932B2A2B56FD00F5F5EC /* Reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */; };
 		F797932D2A2B57A300F5F5EC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797932C2A2B57A300F5F5EC /* DataController.swift */; };
+		F79793312A2CC1FC00F5F5EC /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793302A2CC1FC00F5F5EC /* PetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,11 +30,13 @@
 		338C7D492A21F7C7000778EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		338C7D4B2A21F7C8000778EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F752BB582A2F728B0062F4B7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F79793222A29136B00F5F5EC /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		F79793252A2916D200F5F5EC /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		F79793272A29A33E00F5F5EC /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
 		F797932A2A2B56FD00F5F5EC /* Reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reminder.xcdatamodel; sourceTree = "<group>"; };
 		F797932C2A2B57A300F5F5EC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		F79793302A2CC1FC00F5F5EC /* PetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +79,15 @@
 				F79793222A29136B00F5F5EC /* ReminderView.swift */,
 				338C7D4B2A21F7C8000778EE /* Assets.xcassets */,
 				338C7D4D2A21F7C8000778EE /* Preview Content */,
+<<<<<<< Updated upstream
+=======
+				F79793222A29136B00F5F5EC /* ReminderView.swift */,
+				F79793302A2CC1FC00F5F5EC /* PetView.swift */,
+				F79793272A29A33E00F5F5EC /* AddReminderView.swift */,
+				F797932C2A2B57A300F5F5EC /* DataController.swift */,
+>>>>>>> Stashed changes
 				F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */,
+				F752BB582A2F728B0062F4B7 /* SplashView.swift */,
 			);
 			path = floofy;
 			sourceTree = "<group>";
@@ -170,11 +182,13 @@
 				338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */,
 				F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */,
 				338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */,
+				F79793312A2CC1FC00F5F5EC /* PetView.swift in Sources */,
 				F79793282A29A33E00F5F5EC /* AddReminderView.swift in Sources */,
 				330373E22A2CE1720094B80B /* OnboardingView.swift in Sources */,
 				F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */,
 				33708EFE2A2F812B000BAC2B /* ArticleView.swift in Sources */,
 				F797932B2A2B56FD00F5F5EC /* Reminder.xcdatamodeld in Sources */,
+				F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

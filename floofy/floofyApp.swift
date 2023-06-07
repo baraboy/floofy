@@ -14,7 +14,11 @@ struct floofyApp: App {
     
     var body: some Scene {
         WindowGroup {
+<<<<<<< Updated upstream
             OnboardingView()
+=======
+            SplashView()
+>>>>>>> Stashed changes
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
