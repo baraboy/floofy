@@ -38,13 +38,13 @@ struct AddReminderView: View {
                     
                     Section() {
                         Picker(selection: $categoryIndex, label: Text("Label")) {
-                            ForEach(0..<categorySelection.count) {
+                            ForEach(0..<categorySelection.count, id: \.self) {
                                 Text(self.categorySelection[$0])
                             }
                         }
                         
                         Picker(selection: $petNameIndex, label: Text("Pet")) {
-                            ForEach(0..<petNameSelection.count) {
+                            ForEach(0..<petNameSelection.count, id: \.self) {
                                 Text(self.petNameSelection[$0])
                             }
                         }
@@ -61,7 +61,7 @@ struct AddReminderView: View {
                         }
                         
                         Picker(selection: $repeatReminderIndex, label: Text("Repeat")) {
-                            ForEach(0..<repeatReminderSelection.count) {
+                            ForEach(0..<repeatReminderSelection.count, id: \.self) {
                                 Text(self.repeatReminderSelection[$0])
                             }
                         }
@@ -71,7 +71,7 @@ struct AddReminderView: View {
                     Section() {
                         
                         Picker(selection: $soundNameIndex, label: Text("Sound")) {
-                            ForEach(0..<soundNameSelection.count) {
+                            ForEach(0..<soundNameSelection.count, id: \.self) {
                                 Text(self.soundNameSelection[$0])
                             }
                         }

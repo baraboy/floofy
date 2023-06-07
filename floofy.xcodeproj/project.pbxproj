@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330373E22A2CE1720094B80B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330373E12A2CE1720094B80B /* OnboardingView.swift */; };
+		33708EFE2A2F812B000BAC2B /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33708EFD2A2F812B000BAC2B /* ArticleView.swift */; };
 		338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D472A21F7C7000778EE /* floofyApp.swift */; };
 		338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D492A21F7C7000778EE /* ContentView.swift */; };
 		338C7D4C2A21F7C8000778EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4B2A21F7C8000778EE /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330373E12A2CE1720094B80B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		33708EFD2A2F812B000BAC2B /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		338C7D442A21F7C7000778EE /* floofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338C7D472A21F7C7000778EE /* floofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floofyApp.swift; sourceTree = "<group>"; };
 		338C7D492A21F7C7000778EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,12 +67,14 @@
 			children = (
 				F79793242A2916C100F5F5EC /* Model */,
 				338C7D472A21F7C7000778EE /* floofyApp.swift */,
+				F79793272A29A33E00F5F5EC /* AddReminderView.swift */,
+				33708EFD2A2F812B000BAC2B /* ArticleView.swift */,
 				338C7D492A21F7C7000778EE /* ContentView.swift */,
+				F797932C2A2B57A300F5F5EC /* DataController.swift */,
+				330373E12A2CE1720094B80B /* OnboardingView.swift */,
+				F79793222A29136B00F5F5EC /* ReminderView.swift */,
 				338C7D4B2A21F7C8000778EE /* Assets.xcassets */,
 				338C7D4D2A21F7C8000778EE /* Preview Content */,
-				F79793222A29136B00F5F5EC /* ReminderView.swift */,
-				F79793272A29A33E00F5F5EC /* AddReminderView.swift */,
-				F797932C2A2B57A300F5F5EC /* DataController.swift */,
 				F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */,
 			);
 			path = floofy;
@@ -165,7 +171,9 @@
 				F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */,
 				338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */,
 				F79793282A29A33E00F5F5EC /* AddReminderView.swift in Sources */,
+				330373E22A2CE1720094B80B /* OnboardingView.swift in Sources */,
 				F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */,
+				33708EFE2A2F812B000BAC2B /* ArticleView.swift in Sources */,
 				F797932B2A2B56FD00F5F5EC /* Reminder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"floofy/Preview Content\"";
-				DEVELOPMENT_TEAM = LH73CAYKFH;
+				DEVELOPMENT_TEAM = KS4TNRVTWF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -309,7 +317,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rizky.floofy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rizky.floofyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -325,7 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"floofy/Preview Content\"";
-				DEVELOPMENT_TEAM = LH73CAYKFH;
+				DEVELOPMENT_TEAM = KS4TNRVTWF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -339,7 +347,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rizky.floofy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rizky.floofyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

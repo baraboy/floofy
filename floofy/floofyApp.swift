@@ -14,7 +14,7 @@ struct floofyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnboardingView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
