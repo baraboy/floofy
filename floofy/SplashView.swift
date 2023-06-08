@@ -21,8 +21,6 @@ struct SplashView: View {
                 Image("splashImage")
                     .resizable()
                     .frame(width: 222, height: 149)
-                    
-                    
             }
         }
         .onAppear {

@@ -9,6 +9,23 @@ import SwiftUI
 import CoreData
 import UserNotifications
 
+
+enum Category: String, CaseIterable, Identifiable {
+    
+    case grooming = "Grooming"
+    case clean = "Clean the Cage"
+    
+    var id: String { self.rawValue }
+}
+
+enum RepeatSelection: String, CaseIterable, Identifiable {
+    
+    case weekly = "Weekly"
+    case monthly = "Monthly"
+    
+    var id: String { self.rawValue}
+}
+
 struct AddReminderView: View {
     
     @Environment(\.managedObjectContext) var moc
@@ -16,8 +33,10 @@ struct AddReminderView: View {
     @Environment(\.dismiss) var dismiss
     
     
-    @State private var categoryIndex = 0
-    var categorySelection = ["Grooming", "Clean the Cage"]
+    
+    @State var selectionExample: Category = .grooming
+    
+    @State var selectionRepeat: RepeatSelection = .weekly
     
     @State private var petNameIndex = 0
     var petNameSelection = ["Hengky", "Abu"]
@@ -28,7 +47,7 @@ struct AddReminderView: View {
     var repeatReminderSelection = ["Weekly", "Monthly"]
     
     @State private var soundNameIndex = 0
-    var soundNameSelection = ["Radar", "Apa gitu kek"]
+    var soundNameSelection = ["Radar"]
     
     var body: some View {
         NavigationStack {
@@ -37,10 +56,14 @@ struct AddReminderView: View {
                 Form {
                     
                     Section() {
-                        Picker(selection: $categoryIndex, label: Text("Label")) {
-                            ForEach(0..<categorySelection.count, id: \.self) {
-                                Text(self.categorySelection[$0])
+                        
+                        Picker(selection: $selectionExample, label: Text("Label")) {
+                            
+                            ForEach(Category.allCases) { categories in
+                                Text(categories.rawValue.capitalized)
+                                    .tag(categories)
                             }
+                            
                         }
                         
                         Picker(selection: $petNameIndex, label: Text("Pet")) {
@@ -60,9 +83,17 @@ struct AddReminderView: View {
                             Text("Time")
                         }
                         
-                        Picker(selection: $repeatReminderIndex, label: Text("Repeat")) {
-                            ForEach(0..<repeatReminderSelection.count, id: \.self) {
-                                Text(self.repeatReminderSelection[$0])
+//                        Picker(selection: $repeatReminderIndex, label: Text("Repeat")) {
+//                            ForEach(0..<repeatReminderSelection.count, id: \.self) {
+//                                Text(self.repeatReminderSelection[$0])
+//                            }
+//                        }
+                        
+                        Picker(selection: $selectionRepeat, label: Text("Repeat")) {
+                            
+                            ForEach(RepeatSelection.allCases) { repeatSelected in
+                                Text(repeatSelected.rawValue.capitalized)
+                                    .tag(repeatSelected)
                             }
                         }
 
@@ -87,14 +118,13 @@ struct AddReminderView: View {
                     
                     reminder.id = UUID()
                     reminder.name = petNameSelection[petNameIndex]
-                    reminder.label = categorySelection[categoryIndex]
+                    reminder.label = selectionExample.rawValue
                     reminder.date_item = dateReminder
-                    reminder.repeat_item = repeatReminderSelection[repeatReminderIndex]
-//                    reminder.enable = true
+                    reminder.repeat_item = selectionRepeat.rawValue
                     
                     try? moc.save()
                     
-                    setNotication(label: categorySelection[categoryIndex], date: dateReminder, namePet: petNameSelection[petNameIndex])
+                    setNotication(label: selectionExample.rawValue, date: dateReminder, namePet: petNameSelection[petNameIndex])
                     
                     dismiss()
                     

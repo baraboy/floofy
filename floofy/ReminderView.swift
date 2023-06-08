@@ -29,8 +29,9 @@ struct ReminderView: View {
                         .resizable()
                         .frame(width: 269,height: 328)
                     
-                    Text("Looks like you did not have any pets yet")
+                    Text("Get notifications about your cat's or dog's schedule that have set in advance")
                         .font(.system(size: 17, weight: .semibold))
+                        .multilineTextAlignment(.center)
                     
                     Spacer(minLength: 15)
                     
