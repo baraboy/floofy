@@ -83,12 +83,6 @@ struct AddReminderView: View {
                             Text("Time")
                         }
                         
-//                        Picker(selection: $repeatReminderIndex, label: Text("Repeat")) {
-//                            ForEach(0..<repeatReminderSelection.count, id: \.self) {
-//                                Text(self.repeatReminderSelection[$0])
-//                            }
-//                        }
-                        
                         Picker(selection: $selectionRepeat, label: Text("Repeat")) {
                             
                             ForEach(RepeatSelection.allCases) { repeatSelected in
@@ -111,32 +105,23 @@ struct AddReminderView: View {
                 }.navigationTitle("Add Reminder")
                     .shadow(radius: 2)
                     .scrollContentBackground(.hidden)
-                    
-                Button(action: {
+                
+                CustomButton(text: "Add Reminder") {
                     
                     let reminder = ReminderItem(context: moc)
-                    
+
                     reminder.id = UUID()
                     reminder.name = petNameSelection[petNameIndex]
                     reminder.label = selectionExample.rawValue
                     reminder.date_item = dateReminder
                     reminder.repeat_item = selectionRepeat.rawValue
-                    
+
                     try? moc.save()
-                    
+
                     setNotication(label: selectionExample.rawValue, date: dateReminder, namePet: petNameSelection[petNameIndex])
-                    
+
                     dismiss()
-                    
-                }) {
-                    Text("Add Reminder")
-                        
-                        .background(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255))
-                        .foregroundColor(.white)
-                        .fontWeight(.semibold)
-                        .frame(width: 300 , height: 40 ,alignment: .center)
                 }
-                .buttonStyle(.borderedProminent)
                 
                 Spacer(minLength: 70)
             }

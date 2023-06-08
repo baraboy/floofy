@@ -14,6 +14,8 @@ struct ReminderView: View {
     @FetchRequest(sortDescriptors: []) var reminderItems: FetchedResults<ReminderItem>
 
     @State var showView = false
+    @State var showViewEdit = false
+    
     
     var body: some View {
         
@@ -83,6 +85,13 @@ struct ReminderView: View {
                                 }
                             }
                             .onDelete(perform: deleteReminder)
+                            .onTapGesture {
+                                showViewEdit.toggle()
+                                
+                            }
+                            .sheet(isPresented: $showViewEdit) {
+//                                EditReminderView(reminderr: reminderItems)
+                            }
                         }
                     }
                     .toolbar {
@@ -147,8 +156,10 @@ struct ReminderView: View {
         
         try? moc.save()
     }
+    
 
 }
+
 
 struct ReminderView_Previews: PreviewProvider {
     static var previews: some View {
