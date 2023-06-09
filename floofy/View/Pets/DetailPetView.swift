@@ -10,26 +10,9 @@ import CoreData
 
 struct DetailPetView: View {
     
-//    @Binding var moveToReminderView: Bool
+    @Environment(\.managedObjectContext) var moc
     
-    @FetchRequest(sortDescriptors: []) var pets: FetchedResults<PetsItem>
-
-    
-    @State var selectionPet: PetsItem
-    
-    init(moc: NSManagedObjectContext) {
-        let fetchRequest: NSFetchRequest<PetsItem> = PetsItem.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \PetsItem.name_pets, ascending: true)]
-        fetchRequest.predicate = NSPredicate(value: true)
-        self._pets = FetchRequest(fetchRequest: fetchRequest)
-        
-        do {
-            let namePet = try moc.fetch(fetchRequest)
-            self._selectionPet = State(initialValue: namePet[0])
-        } catch {
-            fatalError("Uh, fetch problem")
-        }
-    }
+    @StateObject var selectionPet: PetsItem
     
     var body: some View {
         NavigationStack {
