@@ -21,7 +21,7 @@ struct PetView: View {
             VStack {
                 
                 if pets.isEmpty {
-                
+                    
                     VStack(spacing: 30) {
                         Spacer()
                         Image("onboarding3")
@@ -171,22 +171,22 @@ struct PetView: View {
                         }
                         
                     }
-                   // Spacer()
+                    // Spacer()
                     
-//                        .padding(.leading, 10)
-//                        .listStyle(.plain)
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                Button {
-                                    showView.toggle()
-                                } label: {
-                                    Image(systemName: "plus")
-                                }
-                                .sheet(isPresented: $showView) {
-                                    AddPetView()
-                                }
+                    //                        .padding(.leading, 10)
+                    //                        .listStyle(.plain)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                showView.toggle()
+                            } label: {
+                                Image(systemName: "plus")
+                            }
+                            .sheet(isPresented: $showView) {
+                                AddPetView()
                             }
                         }
+                    }
                 }
                 
             }
@@ -194,7 +194,6 @@ struct PetView: View {
             
         }
         .navigationBarTitleDisplayMode(.large)
-        
     }
 }
 

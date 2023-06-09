@@ -78,18 +78,12 @@
 				F790BF6C2A31DE05007CA255 /* Component */,
 				F79793242A2916C100F5F5EC /* Model */,
 				338C7D472A21F7C7000778EE /* floofyApp.swift */,
-				F79793272A29A33E00F5F5EC /* AddReminderView.swift */,
-				33708EFD2A2F812B000BAC2B /* ArticleView.swift */,
+				F778EB432A32C6AD007BDC6A /* View */,
 				338C7D492A21F7C7000778EE /* ContentView.swift */,
 				F797932C2A2B57A300F5F5EC /* DataController.swift */,
-				330373E12A2CE1720094B80B /* OnboardingView.swift */,
-				F79793222A29136B00F5F5EC /* ReminderView.swift */,
 				338C7D4B2A21F7C8000778EE /* Assets.xcassets */,
 				338C7D4D2A21F7C8000778EE /* Preview Content */,
-				F79793302A2CC1FC00F5F5EC /* PetView.swift */,
-				F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */,
 				F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */,
-				F752BB582A2F728B0062F4B7 /* SplashView.swift */,
 			);
 			path = floofy;
 			sourceTree = "<group>";
@@ -100,6 +94,60 @@
 				338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F778EB432A32C6AD007BDC6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F778EB482A32C733007BDC6A /* OnBoarding */,
+				F778EB472A32C71E007BDC6A /* Article */,
+				F778EB462A32C710007BDC6A /* Splash */,
+				F778EB452A32C6F1007BDC6A /* Reminder */,
+				F778EB442A32C6B8007BDC6A /* Pets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F778EB442A32C6B8007BDC6A /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */,
+				F79793302A2CC1FC00F5F5EC /* PetView.swift */,
+			);
+			path = Pets;
+			sourceTree = "<group>";
+		};
+		F778EB452A32C6F1007BDC6A /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				F79793222A29136B00F5F5EC /* ReminderView.swift */,
+				F79793272A29A33E00F5F5EC /* AddReminderView.swift */,
+			);
+			path = Reminder;
+			sourceTree = "<group>";
+		};
+		F778EB462A32C710007BDC6A /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F752BB582A2F728B0062F4B7 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		F778EB472A32C71E007BDC6A /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				33708EFD2A2F812B000BAC2B /* ArticleView.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		F778EB482A32C733007BDC6A /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				330373E12A2CE1720094B80B /* OnboardingView.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		F790BF6C2A31DE05007CA255 /* Component */ = {
