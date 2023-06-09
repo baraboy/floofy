@@ -124,39 +124,46 @@ struct PetView: View {
                                     ForEach(pets) { pet in
                                         
                                         if(pet.pet_category == "Dog") {
-                                            VStack() {
-                                                ZStack() {
-                                                    
-                                                    Image(uiImage: UIImage(data: pet.image_pets ?? Data()) ?? UIImage())
-                                                        .resizable()
-                                                        .frame(width: 120, height: 100)
-                                                        .clipShape(Circle())
-                                                    
-                                                    
-                                                    Circle()
-                                                        .strokeBorder(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255),lineWidth: 2)
-                                                        .frame(width: 100, height: 100)
-                                                    
-                                                }
-                                                .padding(.top, 60)
+                                            
+                                            
+                                            NavigationLink(destination: DetailPetView(moc: moc)) {
                                                 
                                                 VStack() {
-                                                    
-                                                    Text(pet.name_pets ?? "Meong" )
-                                                        .font(.system(size: 15, weight: .regular))
-                                                        .frame(alignment: .topLeading)
-                                                    
-                                                    VStack(alignment: .leading) {
-                                                        Text("Last Grooming : 03/02/23")
-                                                            .font(.system(size: 12, weight: .regular))
+                                                    ZStack() {
                                                         
-                                                        Text("Last Clean Cage : 01/04/23")
-                                                            .font(.system(size: 12, weight: .regular))
+                                                        Image(uiImage: UIImage(data: pet.image_pets ?? Data()) ?? UIImage())
+                                                            .resizable()
+                                                            .frame(width: 120, height: 100)
+                                                            .clipShape(Circle())
+                                                        
+                                                        
+                                                        Circle()
+                                                            .strokeBorder(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255),lineWidth: 2)
+                                                            .frame(width: 100, height: 100)
+                                                        
                                                     }
+                                                    .padding(.top, 60)
                                                     
-                                                    
+                                                    VStack() {
+                                                        
+                                                        Text(pet.name_pets ?? "Meong" )
+                                                            .font(.system(size: 15, weight: .regular))
+                                                            .frame(alignment: .topLeading)
+                                                        
+                                                        VStack(alignment: .leading) {
+                                                            Text("Last Grooming : 03/02/23")
+                                                                .font(.system(size: 12, weight: .regular))
+                                                            
+                                                            Text("Last Clean Cage : 01/04/23")
+                                                                .font(.system(size: 12, weight: .regular))
+                                                        }
+                                                        
+                                                        
+                                                    }
                                                 }
                                             }
+                                            
+                                            
                                         }
                                     }
                                 }

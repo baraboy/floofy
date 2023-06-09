@@ -15,6 +15,7 @@
 		338C7D4F2A21F7C8000778EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */; };
 		F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB582A2F728B0062F4B7 /* SplashView.swift */; };
 		F752BB5B2A31B32E0062F4B7 /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */; };
+		F7558FBE2A332CF1003746A9 /* DetailPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7558FBD2A332CF1003746A9 /* DetailPetView.swift */; };
 		F790BF6B2A31DBCE007CA255 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */; };
 		F790BF6E2A31E4B6007CA255 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6D2A31E4B6007CA255 /* CustomButton.swift */; };
 		F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793222A29136B00F5F5EC /* ReminderView.swift */; };
@@ -35,6 +36,7 @@
 		338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F752BB582A2F728B0062F4B7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
+		F7558FBD2A332CF1003746A9 /* DetailPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPetView.swift; sourceTree = "<group>"; };
 		F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		F790BF6D2A31E4B6007CA255 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F79793222A29136B00F5F5EC /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */,
 				F79793302A2CC1FC00F5F5EC /* PetView.swift */,
+				F7558FBD2A332CF1003746A9 /* DetailPetView.swift */,
 			);
 			path = Pets;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				F79793282A29A33E00F5F5EC /* AddReminderView.swift in Sources */,
 				330373E22A2CE1720094B80B /* OnboardingView.swift in Sources */,
 				F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */,
+				F7558FBE2A332CF1003746A9 /* DetailPetView.swift in Sources */,
 				F790BF6B2A31DBCE007CA255 /* TextFieldClearButton.swift in Sources */,
 				33708EFE2A2F812B000BAC2B /* ArticleView.swift in Sources */,
 				F797932B2A2B56FD00F5F5EC /* Reminder.xcdatamodeld in Sources */,

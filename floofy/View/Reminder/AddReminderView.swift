@@ -29,7 +29,6 @@ enum RepeatSelection: String, CaseIterable, Identifiable {
 struct AddReminderView: View {
     
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var reminderItems: FetchedResults<ReminderItem>
     @Environment(\.dismiss) var dismiss
     @FetchRequest(sortDescriptors: []) var pets: FetchedResults<PetsItem>
 
@@ -123,19 +122,7 @@ struct AddReminderView: View {
                 
                 CustomButton(text: "Add Reminder") {
                     
-                    let reminder = ReminderItem(context: moc)
-
-                    reminder.id = UUID()
-//                    reminder.name = petNameSelection[petNameIndex]
-                    
-                    reminder.name = selectionPet.name_pets ?? "Unknown"
-                    reminder.label = selectionExample.rawValue
-                    reminder.date_item = dateReminder
-                    reminder.repeat_item = selectionRepeat.rawValue
-
-                    try? moc.save()
-
-                    setNotication(label: selectionExample.rawValue, date: dateReminder, namePet: selectionPet.name_pets ?? "Unknown")
+                    saveRemindertoCoreData()
 
                     dismiss()
                 }
@@ -143,6 +130,22 @@ struct AddReminderView: View {
                 Spacer(minLength: 70)
             }
         }
+    }
+    
+    func saveRemindertoCoreData() {
+        let reminder = ReminderItem(context: moc)
+
+        reminder.id = UUID()
+//                    reminder.name = petNameSelection[petNameIndex]
+        
+        reminder.name = selectionPet.name_pets ?? "Unknown"
+        reminder.label = selectionExample.rawValue
+        reminder.date_item = dateReminder
+        reminder.repeat_item = selectionRepeat.rawValue
+
+        try? moc.save()
+
+        setNotication(label: selectionExample.rawValue, date: dateReminder, namePet: selectionPet.name_pets ?? "Unknown")
     }
     
     func setNotication(label: String, date: Date, namePet: String) {

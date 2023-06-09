@@ -129,6 +129,7 @@ struct ReminderView: View {
             
         }
         .navigationBarTitleDisplayMode(.large)
+        //.navigationBarBackButtonHidden(true)
         
     }
     
