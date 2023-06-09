@@ -13,8 +13,12 @@ struct ReminderView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var reminderItems: FetchedResults<ReminderItem>
 
+    @FetchRequest(sortDescriptors: []) var pets: FetchedResults<PetsItem>
+    
     @State var showView = false
     @State var showViewEdit = false
+    
+    @State private var showingAlert = false
     
     
     var body: some View {
@@ -52,7 +56,7 @@ struct ReminderView: View {
                             .frame(width: 300 , height: 40 ,alignment: .center)
                     }
                     .sheet(isPresented: $showView) {
-                        AddReminderView()
+                        AddReminderView(moc: moc)
                     }
                     .buttonStyle(.borderedProminent)
                     
@@ -97,16 +101,24 @@ struct ReminderView: View {
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button {
-                                showView.toggle()
                                 
                                 // code for notification
 //                                scheduleNotification()
                                 
+                                if pets.isEmpty {
+                                    showingAlert = true
+                                } else {
+                                    showView.toggle()
+                                }
+                                
                             } label: {
                                 Image(systemName: "plus")
                             }
+                            .alert("Important message", isPresented: $showingAlert) {
+                                Button("OK", role: .cancel) {} 
+                            }
                             .sheet(isPresented: $showView) {
-                                AddReminderView()
+                                AddReminderView(moc: moc)
                             }
                         }
                     }
