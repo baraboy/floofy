@@ -28,7 +28,7 @@ struct DetailPetView: View {
                         
                         
                         Circle()
-                            .strokeBorder(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255),lineWidth: 2)
+                            .strokeBorder(CustomColor.primaryColor,lineWidth: 2)
                             .frame(width: 180, height: 178)
                         
                     }
@@ -47,7 +47,7 @@ struct DetailPetView: View {
                         
                         ZStack {
                             RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                .stroke(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255), lineWidth: 2)
+                                .stroke(CustomColor.primaryColor, lineWidth: 2)
                                 .frame(width: 359, height: 152)
                             
                             List {

@@ -19,6 +19,8 @@
 		338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D492A21F7C7000778EE /* ContentView.swift */; };
 		338C7D4C2A21F7C8000778EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4B2A21F7C8000778EE /* Assets.xcassets */; };
 		338C7D4F2A21F7C8000778EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */; };
+		F70CD32C2A34C12B002A9387 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CD32B2A34C12B002A9387 /* ChallengeView.swift */; };
+		F70CD32E2A34CF9B002A9387 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CD32D2A34CF9B002A9387 /* CustomColor.swift */; };
 		F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB582A2F728B0062F4B7 /* SplashView.swift */; };
 		F752BB5B2A31B32E0062F4B7 /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */; };
 		F7558FBE2A332CF1003746A9 /* DetailPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7558FBD2A332CF1003746A9 /* DetailPetView.swift */; };
@@ -50,6 +52,8 @@
 		338C7D492A21F7C7000778EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		338C7D4B2A21F7C8000778EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F70CD32B2A34C12B002A9387 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		F70CD32D2A34CF9B002A9387 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		F752BB582A2F728B0062F4B7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
 		F7558FBD2A332CF1003746A9 /* DetailPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPetView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		F70CD32A2A34B74D002A9387 /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				F70CD32B2A34C12B002A9387 /* ChallengeView.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			children = (
 				F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */,
 				F790BF6D2A31E4B6007CA255 /* CustomButton.swift */,
+				F70CD32D2A34CF9B002A9387 /* CustomColor.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			files = (
 				F797932D2A2B57A300F5F5EC /* DataController.swift in Sources */,
 				338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */,
+				F70CD32E2A34CF9B002A9387 /* CustomColor.swift in Sources */,
 				F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */,
 				336B3A262A346B6D00599A6C /* ImagePicker.swift in Sources */,
 				338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */,
@@ -308,6 +315,7 @@
 				336B3A222A346AFA00599A6C /* RingwormScabiesModel.mlmodel in Sources */,
 				F797932B2A2B56FD00F5F5EC /* Reminder.xcdatamodeld in Sources */,
 				F7770BBE2A34117A00E04934 /* PetsItem+CoreDataProperties.swift in Sources */,
+				F70CD32C2A34C12B002A9387 /* ChallengeView.swift in Sources */,
 				336B3A2D2A346C4800599A6C /* ScanView.swift in Sources */,
 				F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */,
 				336B3A2B2A346BF400599A6C /* ScanResult.swift in Sources */,

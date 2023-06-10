@@ -20,7 +20,7 @@ struct ContentView: View {
                         Text("Scan")
                     }
                     .tag(0)
-                Text("Challenges Tab")
+                ChallengeView()
                     .tabItem{
                         Image(systemName: "gamecontroller")
                         Text("Challenges")
