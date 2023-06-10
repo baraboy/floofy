@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selectedTab: Int = 2
+    @State var selectedTab: Int = 1
     
     var body: some View {
         VStack{
@@ -20,29 +20,24 @@ struct ContentView: View {
                         Text("Scan")
                     }
                     .tag(0)
-                ReminderView()
-                    .tabItem{
-                        Image(systemName: "bell")
-                        Text("Reminder")
-                    }
-                    .tag(1)
                 Text("Challenges Tab")
                     .tabItem{
                         Image(systemName: "gamecontroller")
                         Text("Challenges")
                     }
-                    .tag(2)
+                    .tag(1)
                 ArticleView()
                     .tabItem{
                         Image(systemName: "newspaper")
                         Text("Articles")
                     }
-                    .tag(3)
+                    .tag(2)
                 PetView()
                     .tabItem{
                         Image(systemName: "pawprint")
                         Text("Pet")
                     }
+                    .tag(3)
             }
         }
         .preferredColorScheme(.light)

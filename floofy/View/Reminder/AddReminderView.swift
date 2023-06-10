@@ -29,25 +29,28 @@ enum RepeatSelection: String, CaseIterable, Identifiable {
 struct AddReminderView: View {
     
     @Environment(\.managedObjectContext) var moc
+    
+    @StateObject var pet: PetsItem
+    
     @Environment(\.dismiss) var dismiss
-    @FetchRequest(sortDescriptors: []) var pets: FetchedResults<PetsItem>
+    //@FetchRequest(sortDescriptors: []) var pets: FetchedResults<PetsItem>
 
     
-    @State var selectionPet: PetsItem
+   // @StateObject var selectionPet: PetsItem
     
-    init(moc: NSManagedObjectContext) {
-        let fetchRequest: NSFetchRequest<PetsItem> = PetsItem.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \PetsItem.name_pets, ascending: true)]
-        fetchRequest.predicate = NSPredicate(value: true)
-        self._pets = FetchRequest(fetchRequest: fetchRequest)
-        
-        do {
-            let namePet = try moc.fetch(fetchRequest)
-            self._selectionPet = State(initialValue: namePet[0])
-        } catch {
-            fatalError("Uh, fetch problem")
-        }
-    }
+//    init(moc: NSManagedObjectContext) {
+//        let fetchRequest: NSFetchRequest<PetsItem> = PetsItem.fetchRequest()
+//        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \PetsItem.name_pets, ascending: true)]
+//        fetchRequest.predicate = NSPredicate(value: true)
+//        self._pets = FetchRequest(fetchRequest: fetchRequest)
+//        
+//        do {
+//            let namePet = try moc.fetch(fetchRequest)
+//            self._selectionPet = State(initialValue: namePet[0])
+//        } catch {
+//            fatalError("Uh, fetch problem")
+//        }
+//    }
     
     
     @State var selectionExample: Category = .grooming
@@ -79,12 +82,12 @@ struct AddReminderView: View {
                             
                         }
                         
-                        Picker(selection: $selectionPet, label: Text("Pet")) {
-                            ForEach(pets) { (pet: PetsItem) in
-                                Text(pet.name_pets ?? "")
-                                    .tag(pet)
-                            }
-                        }
+//                        Picker(selection: $selectionPet, label: Text("Pet")) {
+//                            ForEach(pets) { (pet: PetsItem) in
+//                                Text(pet.name_pets ?? "")
+//                                    .tag(pet)
+//                            }
+//                        }
                     }
                     
                     Section() {
@@ -133,19 +136,34 @@ struct AddReminderView: View {
     }
     
     func saveRemindertoCoreData() {
-        let reminder = ReminderItem(context: moc)
-
-        reminder.id = UUID()
-//                    reminder.name = petNameSelection[petNameIndex]
+//        let reminder = ReminderItem(context: moc)
+//
+////        reminder.id = UUID()
+////                    reminder.name = petNameSelection[petNameIndex]
+//
+////        reminder.name = selectionPet.name_pets ?? "Unknown"
+//        reminder.label = selectionExample.rawValue
+//        reminder.date_item = dateReminder
+//        reminder.repeat_item = selectionRepeat.rawValue
         
-        reminder.name = selectionPet.name_pets ?? "Unknown"
-        reminder.label = selectionExample.rawValue
-        reminder.date_item = dateReminder
-        reminder.repeat_item = selectionRepeat.rawValue
+        
+        let newReminder = ReminderItem(context: moc)
+        newReminder.label = selectionExample.rawValue
+        newReminder.date_item = dateReminder
+        newReminder.repeat_item = selectionRepeat.rawValue
+//        reminder.pets = PetsItem(context: moc)
+//        reminder.pets?.name_pets = "Ddddd"
+        
+        pet.addToReminder(newReminder)
 
-        try? moc.save()
+        
+        do {
+            try? moc.save()
+        } catch {
+            fatalError("Error: \(error.localizedDescription)")
+        }
 
-        setNotication(label: selectionExample.rawValue, date: dateReminder, namePet: selectionPet.name_pets ?? "Unknown")
+        setNotication(label: selectionExample.rawValue, date: dateReminder, namePet: pet.name_pets ?? "Unknown")
     }
     
     func setNotication(label: String, date: Date, namePet: String) {

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="PetsItem" representedClassName="PetsItem" syncable="YES" codeGenerationType="class">
+    <entity name="PetsItem" representedClassName="PetsItem" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image_pets" optional="YES" attributeType="Binary"/>
         <attribute name="name_pets" optional="YES" attributeType="String"/>
         <attribute name="pet_category" optional="YES" attributeType="String"/>
+        <relationship name="reminder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReminderItem" inverseName="pets" inverseEntity="ReminderItem"/>
     </entity>
-    <entity name="ReminderItem" representedClassName="ReminderItem" syncable="YES" codeGenerationType="class">
+    <entity name="ReminderItem" representedClassName="ReminderItem" syncable="YES">
         <attribute name="date_item" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="label" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="repeat_item" optional="YES" attributeType="String"/>
+        <relationship name="pets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PetsItem" inverseName="reminder" inverseEntity="PetsItem"/>
     </entity>
 </model>

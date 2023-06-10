@@ -11,9 +11,11 @@ import SwiftUI
 struct ReminderView: View {
     
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var reminderItems: FetchedResults<ReminderItem>
+//    @FetchRequest(sortDescriptors: []) var reminderItems: FetchedResults<ReminderItem>
 
-    @FetchRequest(sortDescriptors: []) var pets: FetchedResults<PetsItem>
+//    @FetchRequest(sortDescriptors: []) var pets: FetchedResults<PetsItem>
+    
+    @StateObject var pet: PetsItem
     
     @State var showView = false
     @State var showViewEdit = false
@@ -27,98 +29,83 @@ struct ReminderView: View {
             
             VStack(spacing: 20) {
                 
-                if reminderItems.isEmpty {
+                if pet.reminderArray.isEmpty {
                     
                     Spacer()
-                    
+
                     Image("reminderImage")
                         .resizable()
                         .frame(width: 269,height: 328)
-                    
+
                     Text("Get notifications about your cat's or dog's schedule that have set in advance")
                         .font(.system(size: 17, weight: .semibold))
                         .multilineTextAlignment(.center)
-                    
+
                     Spacer(minLength: 15)
-                    
+
                     Button {
                         showView.toggle()
-                        
+
                         // code for notification
                         scheduleNotification()
-                        
+
                     } label: {
                         Text("Add Reminder")
-                            
+
                             .background(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255))
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .frame(width: 300 , height: 40 ,alignment: .center)
                     }
                     .sheet(isPresented: $showView) {
-                        AddReminderView(moc: moc)
+                        AddReminderView(pet: pet)
                     }
                     .buttonStyle(.borderedProminent)
-                    
+
                     Spacer()
-                        
+
                 } else {
                     VStack {
+                        
                         List() {
-                            
-                            ForEach(reminderItems) { reminder in
-                                HStack {
+                            ForEach(pet.reminderArray) { reminder in
+                                
+                                HStack() {
                                     VStack(alignment: .leading) {
-
+                                        
                                         Text(reminder.label ?? "Unknown")
-
+                                        
                                         HStack() {
-                                            Text(reminder.name ?? "Unknown")
+                                            
+                                            Text(reminder.repeat_item ?? "Unknown")
                                                 .fontWeight(.ultraLight)
-
-                                            Text(reminder.repeat_item ?? "Unknown").fontWeight(.ultraLight)
-                                            }
                                         }
-
+                                    }
+                                    
                                     Spacer()
                                     Spacer()
-
-                                    Toggle("Activate", isOn: .constant(true))
+                                    
+                                    Toggle("Active", isOn: .constant(true))
                                         .labelsHidden()
-
                                 }
                             }
                             .onDelete(perform: deleteReminder)
-                            .onTapGesture {
-                                showViewEdit.toggle()
-                                
-                            }
-                            .sheet(isPresented: $showViewEdit) {
-//                                EditReminderView(reminderr: reminderItems)
-                            }
                         }
                     }
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button {
-                                
+
                                 // code for notification
-//                                scheduleNotification()
+                                scheduleNotification()
                                 
-                                if pets.isEmpty {
-                                    showingAlert = true
-                                } else {
-                                    showView.toggle()
-                                }
-                                
+                                showView.toggle()
+
                             } label: {
                                 Image(systemName: "plus")
                             }
-                            .alert("Important message", isPresented: $showingAlert) {
-                                Button("OK", role: .cancel) {} 
-                            }
                             .sheet(isPresented: $showView) {
-                                AddReminderView(moc: moc)
+                                AddReminderView(pet: pet)
                             }
                         }
                     }
@@ -163,19 +150,18 @@ struct ReminderView: View {
     
     func deleteReminder(at offsets: IndexSet) {
         for offset in offsets {
-            let reminder = reminderItems[offset]
+            let reminder = pet.reminderArray[offset]
             moc.delete(reminder)
         }
         
         try? moc.save()
     }
     
-
 }
 
 
-struct ReminderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReminderView()
-    }
-}
+//struct ReminderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ReminderView()
+//    }
+//}

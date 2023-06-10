@@ -117,7 +117,7 @@ struct DetailPetView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
-                    NavigationLink(destination: ReminderView()) {
+                    NavigationLink(destination: ReminderView(pet: selectionPet)) {
                         Text("Reminders")
                     }
                     
