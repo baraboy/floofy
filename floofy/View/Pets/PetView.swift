@@ -14,6 +14,8 @@ struct PetView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
     
+    @State var selectedLabelCategory: Category = .grooming
+    
     var body: some View {
         
         NavigationStack {
@@ -92,11 +94,25 @@ struct PetView: View {
                                                             .frame(alignment: .topLeading)
 
                                                         VStack(alignment: .leading) {
-                                                            Text("Last Grooming : 03/02/23")
-                                                                .font(.system(size: 12, weight: .regular))
-
-                                                            Text("Last Clean Cage : 01/04/23")
-                                                                .font(.system(size: 12, weight: .regular))
+                                                            
+                                                            ForEach(pet.reminderArray){ reminder in
+                                                                
+                                                                let dateNow = Date()
+                                                                
+                                                                
+                                                                if reminder.date_item ?? Date() > dateNow {
+                                                                    
+                                                                    if reminder.label ?? "Unknown" == selectedLabelCategory.rawValue {
+                                                                        Text("Upcoming grooming : \(reminder.date_item ?? Date(), style: .date)")
+                                                                            .font(.system(size: 12, weight: .regular))
+                                                                    } else {
+                                                                        Text("Upcoming clean cage : \(reminder.date_item ?? Date(), style: .date)")
+                                                                            .font(.system(size: 12, weight: .regular))
+                                                                    }
+                                                                    
+                                                                }
+                                                                
+                                                            }
                                                         }
 
 
@@ -149,21 +165,25 @@ struct PetView: View {
                                                     }
                                                     .padding(.top, 60)
 
-                                                    VStack() {
-
-                                                        Text(pet.name_pets ?? "Meong" )
-                                                            .font(.system(size: 15, weight: .regular))
-                                                            .frame(alignment: .topLeading)
-
-                                                        VStack(alignment: .leading) {
-                                                            Text("Last Grooming : 03/02/23")
-                                                                .font(.system(size: 12, weight: .regular))
-
-                                                            Text("Last Clean Cage : 01/04/23")
-                                                                .font(.system(size: 12, weight: .regular))
+                                                    VStack(alignment: .leading) {
+                                                        
+                                                        ForEach(pet.reminderArray){ reminder in
+                                                            
+                                                            let dateNow = Date()
+                                                            
+                                                            
+                                                            if reminder.date_item ?? Date() > dateNow {
+                                                                
+                                                                if reminder.label ?? "Unknown" == selectedLabelCategory.rawValue {
+                                                                    Text("Upcoming grooming : \(reminder.date_item ?? Date(), style: .date)")
+                                                                        .font(.system(size: 12, weight: .regular))
+                                                                } else {
+                                                                    Text("Upcoming clean cage : \(reminder.date_item ?? Date(), style: .date)")
+                                                                        .font(.system(size: 12, weight: .regular))
+                                                                }
+                                                                
+                                                            }
                                                         }
-
-
                                                     }
                                                 }
                                             }
