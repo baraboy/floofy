@@ -159,7 +159,7 @@ struct PetView: View {
                             .padding(.leading, 15)
                         VStack {
                             ScrollView(.vertical,showsIndicators: false) {
-                                HStack(spacing: 15) {
+                                VStack(spacing: 15) {
                                     
                                     ForEach(pets) { pet in
                                         
