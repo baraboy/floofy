@@ -17,7 +17,6 @@ class ScanViewModel: ObservableObject {
     @Published var imageSelected = UIImage()
     @Published var classificationLabel: String = ""
     @Published var confidencePercentage: String = ""
-    @Published var selectedAnimal: String = ""
     
     
     struct LoadingError: Error, Identifiable {
@@ -72,7 +71,6 @@ class ScanViewModel: ObservableObject {
         imageSelected = UIImage()
         classificationLabel = ""
         confidencePercentage = ""
-        selectedAnimal = ""
         modelLoaded = false
         model = nil
         modelLoadingError = nil
@@ -89,19 +87,16 @@ struct ScanView: View {
         NavigationView {
             VStack {
                 
-                Picker("Select Animal", selection: $selectedAnimal) {
-                    Text("Hengki").tag("Hengki")
-                    Text("Happy").tag("Happy")
-                    Text("Scoopy").tag("Scoopy")
-                }
-                .pickerStyle(.menu)
-                Button("View Result") {
-                    viewModel.imageClassification(image: viewModel.imageSelected)
-                    showClassificationSheet = true
-                }
-                .padding()
-                .foregroundColor(Color.white)
-                .background(Color.green)
+                Image("onboarding1")
+                    .resizable()
+                    .frame(width: 300, height: 300)
+                
+                Text("Scan your cat or dog’s skin to know the classification of ringworm and scabies diseases")
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 16)
+                    .foregroundColor(Color("PrimaryColor"))
                 
                 NavigationLink(
                     destination: ScanResult(classificationLabel: viewModel.classificationLabel, confidencePercentage: viewModel.confidencePercentage, imageSelected: viewModel.imageSelected, selectedAnimal: $selectedAnimal),
@@ -127,6 +122,10 @@ struct ScanView: View {
             }
             .sheet(isPresented: $viewModel.showImagePicker) {
                 ImagePicker(selectedImage: $viewModel.imageSelected, sourceType: viewModel.sourceType)
+                    .onDisappear {
+                        viewModel.imageClassification(image: viewModel.imageSelected)
+                        showClassificationSheet = true
+                    }
             }
             .onAppear {
                 viewModel.reset()

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ScanResult: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var classificationLabel: String
     var confidencePercentage: String
     var imageSelected: UIImage
@@ -15,7 +17,7 @@ struct ScanResult: View {
     
     
     var body: some View {
-
+        
         VStack {
             
             Image(uiImage: imageSelected)
@@ -23,27 +25,49 @@ struct ScanResult: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)
             
+            Picker("Select Animal", selection: $selectedAnimal) {
+                Text("Hengki").tag("Hengki")
+                Text("Happy").tag("Happy")
+                Text("Scoopy").tag("Scoopy")
+            }
+            
             Text("\(classificationLabel)")
-                .font(.title3)
+                .font(.headline)
+                .padding(.bottom,1)
             
             Text("Classification: \(confidencePercentage) \(classificationLabel)")
-                .padding()
+                .padding(.bottom,1)
             
             Text("The image of \(selectedAnimal) above has a classification of \(classificationLabel) (\(confidencePercentage)), you should take \(selectedAnimal) to the vet.")
-                .padding()
+                .multilineTextAlignment(.leading)
+                .padding(.horizontal,10)
+                .padding(.bottom, 1)
             
             Text("If you want to know more about what \(classificationLabel) is, you can read it through the article.")
-                .padding()
+                .multilineTextAlignment(.leading)
+                .padding(.horizontal, 10)
+                .padding(.bottom, 1)
+            HStack{
+                Text("Veterinarian Location: ")
+                    .bold()
+                Spacer()
+            }
             
-            Text("Veterinarian Location: ")
-                .bold()
             
             LocationListView()
         }
-        .padding()
-        
+        .navigationBarTitle("Classification Result")
+        .navigationBarItems(trailing: doneButton)
+    }
+    private var doneButton: some View {
+        Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            Text("Done")
+        }
     }
 }
+
 
 struct ScanResult_Previews: PreviewProvider {
     static var previews: some View {

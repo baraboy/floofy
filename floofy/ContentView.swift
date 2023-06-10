@@ -9,21 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selectedTab: Int = 1
-    
     var body: some View {
         VStack{
-            TabView(selection: $selectedTab){
+            TabView(){
+                ChallengeView()
+                    .tabItem{
+                        Image(systemName: "gamecontroller")
+                        Text("Missions")
+                    }
+                    .tag(0)
                 ScanView()
                     .tabItem{
                         Image(systemName: "camera.viewfinder")
                         Text("Scan")
-                    }
-                    .tag(0)
-                ChallengeView()
-                    .tabItem{
-                        Image(systemName: "gamecontroller")
-                        Text("Challenges")
                     }
                     .tag(1)
                 ArticleView()
