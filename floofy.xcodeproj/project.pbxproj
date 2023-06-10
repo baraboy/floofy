@@ -69,10 +69,6 @@
 		338C7D3B2A21F7C7000778EE = {
 			isa = PBXGroup;
 			children = (
-				F7770BB72A34117A00E04934 /* ReminderItem+CoreDataClass.swift */,
-				F7770BB82A34117A00E04934 /* ReminderItem+CoreDataProperties.swift */,
-				F7770BB92A34117A00E04934 /* PetsItem+CoreDataClass.swift */,
-				F7770BBA2A34117A00E04934 /* PetsItem+CoreDataProperties.swift */,
 				338C7D462A21F7C7000778EE /* floofy */,
 				338C7D452A21F7C7000778EE /* Products */,
 			);
@@ -89,6 +85,10 @@
 		338C7D462A21F7C7000778EE /* floofy */ = {
 			isa = PBXGroup;
 			children = (
+				F7770BB72A34117A00E04934 /* ReminderItem+CoreDataClass.swift */,
+				F7770BB82A34117A00E04934 /* ReminderItem+CoreDataProperties.swift */,
+				F7770BB92A34117A00E04934 /* PetsItem+CoreDataClass.swift */,
+				F7770BBA2A34117A00E04934 /* PetsItem+CoreDataProperties.swift */,
 				F790BF6C2A31DE05007CA255 /* Component */,
 				F79793242A2916C100F5F5EC /* Model */,
 				338C7D472A21F7C7000778EE /* floofyApp.swift */,
