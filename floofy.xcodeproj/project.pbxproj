@@ -135,9 +135,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F70CD32A2A34B74D002A9387 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
 		F778EB432A32C6AD007BDC6A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F70CD32A2A34B74D002A9387 /* Challenge */,
 				336B3A292A346BDE00599A6C /* Scan */,
 				F778EB482A32C733007BDC6A /* OnBoarding */,
 				F778EB472A32C71E007BDC6A /* Article */,
