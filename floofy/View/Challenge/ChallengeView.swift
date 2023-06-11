@@ -30,7 +30,7 @@ struct ChallengeView: View {
                     
                     if countCoreDataCoba < 3 {
                         
-                        if pets.count == 0 {
+                        if pets.isEmpty {
                             showingFirstAlert.toggle()
                         } else {
                             showView.toggle()
@@ -202,10 +202,6 @@ struct ChallengeView: View {
                         )
                 }
                 
-                .alert(isPresented: $showingFirstAlert) {
-                    Alert(title: Text("Warning!"), message: Text("You have to input the pets first!"), dismissButton: .default(Text("Got it!").foregroundColor(CustomColor.primaryColor)))
-                }
-                
                 .alert(isPresented: $showingAlert2) {
                     Alert(title: Text("Congratulations!"), message: Text("Completed the mission \"Bathe your pet 3 times\" New Badge Unlocked"), dismissButton: .default(Text("OK").foregroundColor(CustomColor.primaryColor)))
                 }
@@ -311,10 +307,14 @@ struct ChallengeView: View {
                     
                 }
             }
+            
+            .alert(isPresented: $showingFirstAlert) {
+                Alert(title: Text("Warning!"), message: Text("You have to input the pets first!"), dismissButton: .default(Text("Got it!").foregroundColor(CustomColor.primaryColor)))
+            }
+            
             .onAppear {
                 countCoreDataCoba = coba.count
             }
-            
             
             .navigationTitle("Missions")
             .toolbar(content: {
