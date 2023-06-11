@@ -69,8 +69,9 @@ struct DetailPetView: View {
                                                             .font(.system(size: 17, weight: .regular))
                                                             .foregroundColor(.black)
                                                         
-                                                        Text("Scabies")
+                                                        Text(activityPet.description_coba ?? "Unknown")
                                                             .font(.system(size: 15, weight: .regular))
+                                                            .foregroundColor(.black)
                                                         
                                                         
                                                     }
