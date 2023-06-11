@@ -70,41 +70,49 @@ struct ArticleDetailView: View {
             ScrollView{
                 Image(article.imageName)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 250)
+                    .cornerRadius(10)
+                    .padding(.top, 20)
                 
-                Text("Image source: \(article.imageSource)")
-                    .font(.caption)
-                    .foregroundColor(.gray)
-                    .padding(.vertical, 8)
+                HStack{
+                    
+                    Text("Image source: \(article.imageSource)")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                    
+                    Spacer()
+                    
+                }.padding(.leading)
                 
                 Text(article.title)
                     .font(.headline)
                     .bold()
-                    .padding(.vertical, 4)
+                    .padding()
                 
                 Text(article.para1)
                     .font(.body)
-                    .padding(.vertical,2)
+                    .padding()
                 
                 Text(article.para2)
                     .font(.body)
-                    .padding(.vertical,2)
+                    .padding()
                 
                 Text(article.para3)
                     .font(.body)
-                    .padding(.vertical,2)
+                    .padding()
                 
                 Text(article.para4)
                     .font(.body)
-                    .padding(.vertical,2)
+                    .padding()
                 
                 Text(article.para5)
                     .font(.body)
-                    .padding(.vertical,2)
+                    .padding()
                 
                 Text(article.para6)
                     .font(.body)
-                    .padding(.vertical,2)
+                    .padding()
                 
             }
         }

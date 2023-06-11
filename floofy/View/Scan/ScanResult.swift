@@ -40,22 +40,21 @@ struct ScanResult: View {
             
             Text("The image of \(selectedAnimal) above has a classification of \(classificationLabel) (\(confidencePercentage)), you should take \(selectedAnimal) to the vet.")
                 .multilineTextAlignment(.leading)
-                .padding(.horizontal,10)
                 .padding(.bottom, 1)
             
             Text("If you want to know more about what \(classificationLabel) is, you can read it through the article.")
                 .multilineTextAlignment(.leading)
-                .padding(.horizontal, 10)
                 .padding(.bottom, 1)
             HStack{
                 Text("Veterinarian Location: ")
                     .bold()
+                    .padding(.leading)
                 Spacer()
             }
             
-            
             LocationListView()
         }
+        .padding()
         .navigationBarTitle("Classification Result")
         .navigationBarItems(trailing: doneButton)
     }

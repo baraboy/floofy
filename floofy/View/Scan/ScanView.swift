@@ -89,9 +89,9 @@ struct ScanView: View {
                 
                 Image("onboarding1")
                     .resizable()
-                    .frame(width: 300, height: 300)
+                    .frame(width: 393, height: 393)
                 
-                Text("Scan your cat or dog’s skin to know the classification of ringworm and scabies diseases")
+                Text("Scan your cat's or dog’s skin to know the classification of ringworm and scabies diseases")
                     .bold()
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
