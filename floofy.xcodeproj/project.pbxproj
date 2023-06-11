@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		330373E22A2CE1720094B80B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330373E12A2CE1720094B80B /* OnboardingView.swift */; };
+		3360C2282A363332009896AC /* FloofyModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3360C2272A363332009896AC /* FloofyModel.mlmodel */; };
 		336B3A222A346AFA00599A6C /* RingwormScabiesModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A212A346AFA00599A6C /* RingwormScabiesModel.mlmodel */; };
 		336B3A262A346B6D00599A6C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A232A346B6D00599A6C /* ImagePicker.swift */; };
 		336B3A272A346B6D00599A6C /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A242A346B6D00599A6C /* LocationListView.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		330373E12A2CE1720094B80B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3360C2272A363332009896AC /* FloofyModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FloofyModel.mlmodel; sourceTree = "<group>"; };
 		336B3A212A346AFA00599A6C /* RingwormScabiesModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RingwormScabiesModel.mlmodel; sourceTree = "<group>"; };
 		336B3A232A346B6D00599A6C /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		336B3A242A346B6D00599A6C /* LocationListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				F70CD3602A35B4EB002A9387 /* ReminderItem+CoreDataProperties.swift */,
 				336B3A252A346B6D00599A6C /* UIImage+Extensions.swift */,
 				336B3A212A346AFA00599A6C /* RingwormScabiesModel.mlmodel */,
+				3360C2272A363332009896AC /* FloofyModel.mlmodel */,
 				F790BF6C2A31DE05007CA255 /* Component */,
 				F79793242A2916C100F5F5EC /* Model */,
 				338C7D472A21F7C7000778EE /* floofyApp.swift */,
@@ -339,6 +342,7 @@
 				F70CD3612A35B4EB002A9387 /* PetsItem+CoreDataClass.swift in Sources */,
 				F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */,
 				336B3A2B2A346BF400599A6C /* ScanResult.swift in Sources */,
+				3360C2282A363332009896AC /* FloofyModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

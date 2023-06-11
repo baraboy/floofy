@@ -26,12 +26,12 @@ class ScanViewModel: ObservableObject {
     
     @Published var modelLoadingError: LoadingError?
     @Published var modelLoaded = false
-    private var model: RingwormScabiesModel?
+    private var model: FloofyModel?
     
     func loadModel() {
         do {
             let configuration = MLModelConfiguration()
-            model = try RingwormScabiesModel(configuration: configuration)
+            model = try FloofyModel(configuration: configuration)
             modelLoaded = true
         } catch {
             modelLoadingError = LoadingError(error: error)
