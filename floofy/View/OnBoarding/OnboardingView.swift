@@ -21,6 +21,7 @@ private let onBoardingSteps = [
 struct OnboardingView: View {
     
     @State private var currentStep = 0
+    let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
     
     var body: some View {
         NavigationView{
@@ -69,6 +70,7 @@ struct OnboardingView: View {
                                 .foregroundColor(Color("PrimaryColor"))
                         }
                         .tag(step)
+                        .transition(transition)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
