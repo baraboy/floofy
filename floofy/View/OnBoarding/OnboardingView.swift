@@ -37,6 +37,17 @@ struct OnboardingView: View {
                         }
                     }
                 }
+                else{
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                        }) {
+                            Text("Skip")
+                                .padding(.horizontal, 28)
+                                .foregroundColor(.white)
+                        }
+                    }
+                }
                 Text("Floofy.")
                     .font(.system(size: 60))
                     .bold()

@@ -117,6 +117,7 @@ struct ArticleDetailView: View {
             }
         }
         .padding(.horizontal, 16)
+        .foregroundColor(.black)
         .background(.white)
     }
 }

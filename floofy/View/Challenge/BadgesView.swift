@@ -206,7 +206,7 @@ struct BadgesView: View {
                     Spacer()
                 }
             }
-            
+            .accentColor(Color("PrimaryColor"))
             .padding(.leading, 10)
             
             Spacer()

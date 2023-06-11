@@ -39,7 +39,9 @@ struct ContentView: View {
                     }
                     .tag(3)
             }
+            .accentColor(Color("PrimaryColor"))
         }
+        .foregroundColor(Color("PrimaryColor"))
         .preferredColorScheme(.light)
         .navigationBarBackButtonHidden()
         

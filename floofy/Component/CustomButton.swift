@@ -16,7 +16,7 @@ struct CustomButton: View {
         Button(action: clicked) {
             
                 Text(text)
-                    .background(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255))
+                    .background(Color("PrimaryColor"))
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
                     .frame(width: 300 , height: 40 ,alignment: .center)

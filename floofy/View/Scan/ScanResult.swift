@@ -14,6 +14,7 @@ struct ScanResult: View {
     var confidencePercentage: String
     var imageSelected: UIImage
     @Binding var selectedAnimal: String
+    @State private var showAlert = false
     
     
     var body: some View {
@@ -30,6 +31,7 @@ struct ScanResult: View {
                 Text("Happy").tag("Happy")
                 Text("Scoopy").tag("Scoopy")
             }
+            .foregroundColor(.black)
             
             Text("\(classificationLabel)")
                 .font(.headline)
@@ -54,10 +56,40 @@ struct ScanResult: View {
             
             LocationListView()
         }
+        .foregroundColor(.black)
         .padding()
         .navigationBarTitle("Classification Result")
-        .navigationBarItems(trailing: doneButton)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton, trailing: doneButton)
+        .onDisappear {
+            if presentationMode.wrappedValue.isPresented {
+                showAlert = true
+            }
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Confirmation"),
+                message: Text("Are you sure you want to go back? Your progress will be deleted"),
+                primaryButton: .cancel(),
+                secondaryButton: .destructive(Text("Yes"), action: {
+                    presentationMode.wrappedValue.dismiss()
+                })
+            )
+        }
     }
+    
+    private var backButton: some View {
+        Button(action: {
+            showAlert = true
+        }) {
+            HStack(spacing: 5) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                Text("Back")
+            }
+        }
+    }
+    
     private var doneButton: some View {
         Button(action: {
             presentationMode.wrappedValue.dismiss()
@@ -74,7 +106,7 @@ struct ScanResult_Previews: PreviewProvider {
             classificationLabel: "Cat",
             confidencePercentage: "80%",
             imageSelected: UIImage(),
-            selectedAnimal: .constant("Hengki")
+            selectedAnimal: .constant("Select your pet")
         )
     }
 }

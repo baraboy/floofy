@@ -61,6 +61,7 @@ struct LocationListView: View {
                 Button("Directions") {
                     openMapsAppWithDirections(to: location)
                 }
+                .foregroundColor(Color("PrimaryColor"))
             }
         }
     }
