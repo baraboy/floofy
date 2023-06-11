@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct BadgesView: View {
+    
+    @State var countCoreDataCoba: Int = 0
+    @FetchRequest(sortDescriptors: []) private var coba: FetchedResults<CobaItem>
+    
     var body: some View {
         
         NavigationStack {
@@ -24,6 +28,8 @@ struct BadgesView: View {
                             .overlay(
                             
                                 VStack(spacing: 30) {
+                                    
+                                    Spacer()
                                     HStack() {
                                         
                                         Spacer()
@@ -33,10 +39,18 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 1 {
+                                                Image("lockBadges1")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges1")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
+                                            
                                         }
                                         
                                         ZStack {
@@ -45,10 +59,17 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 2 {
+                                                Image("lockBadges2")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges2")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
                                         }
                                         
                                         ZStack {
@@ -57,10 +78,17 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 3 {
+                                                Image("lockBadges3")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges3")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
                                         }
                                         
                                         ZStack {
@@ -69,10 +97,17 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 4 {
+                                                Image("lockBadges4")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges4")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
                                         }
                                         
                                         
@@ -92,10 +127,17 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 4 {
+                                                Image("lockBadges5")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges5")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
                                         }
                                         
                                         ZStack {
@@ -104,34 +146,17 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
-                                        }
-                                        
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor,lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
-                                        }
-                                        
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor,lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 4 {
+                                                Image("lockBadges6")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges6")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
                                         }
                                         
                                         Spacer()
@@ -165,10 +190,17 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 4 {
+                                                Image("lockBadges4")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges4")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
                                         }
                                         
                                         ZStack {
@@ -177,10 +209,17 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 4 {
+                                                Image("lockBadges4")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges4")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
                                         }
                                         
                                         ZStack {
@@ -189,10 +228,17 @@ struct BadgesView: View {
                                                 .frame(width: 55, height: 52)
                                                 .padding(.leading, 10)
                                             
-                                            Image("bathBadges1")
-                                                .resizable()
-                                                .frame(width:33, height: 33)
-                                                .padding(.leading, 10)
+                                            if coba.count < 4 {
+                                                Image("lockBadges4")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            } else {
+                                                Image("bathBadges4")
+                                                    .resizable()
+                                                    .frame(width:33, height: 33)
+                                                    .padding(.leading, 10)
+                                            }
                                         }
                                         
                                         Spacer()
