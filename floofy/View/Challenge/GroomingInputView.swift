@@ -49,6 +49,7 @@ struct GroomingInputView: View {
             HStack {
                 Text("Grooming")
                     .font(.title2)
+                    .foregroundColor(.black)
                 Spacer()
             }
             .padding(.leading, 35)
@@ -103,11 +104,12 @@ struct GroomingInputView: View {
                 
                 TextField("Test", text: self.$textTextfield, axis: .vertical)
                     .background(RoundedRectangle(cornerRadius:8, style: .continuous).stroke(CustomColor.primaryColor, lineWidth: 3)).padding(.leading, 30).padding(.trailing, 30)
+                    .foregroundColor(.black)
                     .lineLimit(5, reservesSpace: true)
                 
                 Form {
                     Section() {
-                        Picker(selection: $petSelected, label: Text("Pet")) {
+                        Picker(selection: $petSelected, label: Text("Pet").foregroundColor(.black)) {
                             ForEach(pets, id: \.self) { pet in
                                 Text(pet.name_pets ?? "Unknown")
                                     .tag(pet)

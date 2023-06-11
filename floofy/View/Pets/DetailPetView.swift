@@ -38,10 +38,10 @@ struct DetailPetView: View {
                     
                     VStack(alignment: .leading) {
                         
-                        Text("Scan")
+                        Text("Grooming")
                             .font(.system(size: 17, weight: .semibold))
                             .padding(.leading, 15)
-                            
+                            .foregroundColor(.black)
                         
                         
                         
@@ -65,8 +65,9 @@ struct DetailPetView: View {
                                                     
                                                     
                                                     VStack(alignment: .leading) {
-                                                        Text("Scan 1")
+                                                        Text("Grooming")
                                                             .font(.system(size: 17, weight: .regular))
+                                                            .foregroundColor(.black)
                                                         
                                                         Text("Scabies")
                                                             .font(.system(size: 15, weight: .regular))

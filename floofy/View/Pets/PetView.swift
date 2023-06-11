@@ -60,6 +60,7 @@ struct PetView: View {
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .font(.system(.title2))
                             .padding(.leading, 15)
+                            .foregroundColor(.black)
                         
                         VStack {
                             ScrollView(.vertical,showsIndicators: true) {
@@ -157,6 +158,7 @@ struct PetView: View {
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .font(.system(.title2))
                             .padding(.leading, 15)
+                            .foregroundColor(.black)
                         VStack {
                             ScrollView(.vertical,showsIndicators: false) {
                                 VStack(spacing: 15) {

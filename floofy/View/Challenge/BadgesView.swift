@@ -173,6 +173,7 @@ struct BadgesView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Special")
                             .font(.system(size: 17, weight: .bold))
+                            
                         
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .stroke(CustomColor.primaryColor, lineWidth: 2)

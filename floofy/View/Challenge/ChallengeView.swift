@@ -262,6 +262,7 @@ struct ChallengeView: View {
                     
                     Text("Special Missions")
                         .font(.system(size: 17, weight: .semibold))
+                        .foregroundColor(.black)
                     
                     RoundedRectangle(cornerRadius: 5, style: .continuous)
                         .stroke(CustomColor.primaryColor, lineWidth: 2)
