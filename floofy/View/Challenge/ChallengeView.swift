@@ -18,7 +18,7 @@ struct ChallengeView: View {
     
     @State var countCoreDataCoba: Int = 0
     
-    @State private var showingAlert1 = false
+    @State private var showingFirstAlert: Bool = false
     @State private var showingAlert2 = false
         
     var body: some View {
@@ -31,7 +31,7 @@ struct ChallengeView: View {
                     if countCoreDataCoba < 3 {
                         
                         if pets.count == 0 {
-                            showingAlert1.toggle()
+                            showingFirstAlert.toggle()
                         } else {
                             showView.toggle()
                         }
@@ -202,7 +202,7 @@ struct ChallengeView: View {
                         )
                 }
                 
-                .alert(isPresented: $showingAlert1) {
+                .alert(isPresented: $showingFirstAlert) {
                     Alert(title: Text("Warning!"), message: Text("You have to input the pets first!"), dismissButton: .default(Text("Got it!").foregroundColor(CustomColor.primaryColor)))
                 }
                 

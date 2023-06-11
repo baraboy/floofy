@@ -78,14 +78,17 @@ struct AddPetView: View {
                     
                     Text("Name")
                         .font(.system(size: 17, weight: .semibold))
+                        .foregroundColor(.black)
                     
                     TextField("Enter the name here", text: $namePet)
                         .modifier(TextFieldClearButton(text: $namePet))
                         .multilineTextAlignment(.leading)
+                        .foregroundColor(.black)
                     
                     Text("Dog/Cat?")
                         .font(.system(size: 17, weight: .semibold))
                         .padding(.top, 10)
+                        .foregroundColor(.black)
                     
                     Picker(selection: $selectionPets, label: Text("Dog/Cat?")) {
                         

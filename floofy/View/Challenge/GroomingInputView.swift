@@ -101,6 +101,7 @@ struct GroomingInputView: View {
                 Text("Description")
                     .font(.system(size: 17, weight: .semibold))
                     .padding(.leading, 20)
+                    .foregroundColor(.black)
                 
                 TextField("Test", text: self.$textTextfield, axis: .vertical)
                     .background(RoundedRectangle(cornerRadius:8, style: .continuous).stroke(CustomColor.primaryColor, lineWidth: 3)).padding(.leading, 30).padding(.trailing, 30)

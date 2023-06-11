@@ -73,7 +73,7 @@ struct DetailPetView: View {
                                                             .font(.system(size: 15, weight: .regular))
                                                             .foregroundColor(.black)
                                                         
-                                                        
+
                                                     }
                                                     
                                                     Spacer()
