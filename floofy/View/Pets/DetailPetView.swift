@@ -66,7 +66,7 @@ struct DetailPetView: View {
                                                     
                                                     VStack(alignment: .leading) {
                                                         Text("Grooming")
-                                                            .font(.system(size: 17, weight: .regular))
+                                                            .font(.system(size: 17, weight: .bold))
                                                             .foregroundColor(.black)
                                                         
                                                         Text(activityPet.description_coba ?? "Unknown")
@@ -89,11 +89,13 @@ struct DetailPetView: View {
                                             
                                         }
                                     }
-                                    .frame(width: 390,height: 180)
+                                    .frame(width: 350,height: 140)
                                     .scrollContentBackground(.hidden)
-                                    .padding(.bottom, 30)
+                                    .padding(.bottom, 50)
                                     .padding(.top, 20)
                                     .padding(.trailing, 5)
+                                    .padding(.leading, 5)
+                                    .offset(y: 10)
                                 
                                 )
                             

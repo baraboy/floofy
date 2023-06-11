@@ -10,6 +10,12 @@ import CoreData
 
 struct ChallengeView: View {
     
+    enum AlertType {
+            case alert1
+            case alert2
+            case none
+        }
+    
     @State private var showView = false
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
@@ -20,6 +26,7 @@ struct ChallengeView: View {
     
     @State private var showingFirstAlert: Bool = false
     @State private var showingAlert2 = false
+    @State var alertType: AlertType = .none
         
     var body: some View {
         
@@ -32,12 +39,15 @@ struct ChallengeView: View {
                         
                         if pets.isEmpty {
                             showingFirstAlert.toggle()
+                            alertType = .alert1
                         } else {
                             showView.toggle()
                         }
                         
                     } else {
-                        showingAlert2.toggle()
+                        showingFirstAlert.toggle()
+                        alertType = .alert2
+                        countCoreDataCoba = 3
                     }
                     
                 }label: {
@@ -202,9 +212,19 @@ struct ChallengeView: View {
                         )
                 }
                 
-                .alert(isPresented: $showingAlert2) {
-                    Alert(title: Text("Congratulations!"), message: Text("Completed the mission \"Bathe your pet 3 times\" New Badge Unlocked"), dismissButton: .default(Text("OK").foregroundColor(CustomColor.primaryColor)))
+                .alert(isPresented: $showingFirstAlert) {
+                    
+                    if alertType == .alert1 {
+                         return Alert(title: Text("Warning!"), message: Text("You have to input the pets first!"), dismissButton: .default(Text("Got it!").foregroundColor(CustomColor.primaryColor)))
+                    } else {
+                        return Alert(title: Text("Congratulations!"), message: Text("Completed the mission \"Bathe your pet 3 times\" New Badge Unlocked"), dismissButton: .default(Text("OK").foregroundColor(CustomColor.primaryColor)))
+                    }
+                    
                 }
+                
+//                .alert(isPresented: $showingAlert2) {
+//                    Alert(title: Text("Congratulations!"), message: Text("Completed the mission \"Bathe your pet 3 times\" New Badge Unlocked"), dismissButton: .default(Text("OK").foregroundColor(CustomColor.primaryColor)))
+//                }
                 
                 .sheet(isPresented: $showView) {
                     GroomingInputView(moc: moc)
@@ -306,10 +326,6 @@ struct ChallengeView: View {
                     Spacer()
                     
                 }
-            }
-            
-            .alert(isPresented: $showingFirstAlert) {
-                Alert(title: Text("Warning!"), message: Text("You have to input the pets first!"), dismissButton: .default(Text("Got it!").foregroundColor(CustomColor.primaryColor)))
             }
             
             .onAppear {
