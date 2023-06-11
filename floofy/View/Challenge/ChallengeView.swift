@@ -20,23 +20,7 @@ struct ChallengeView: View {
     
     @State private var showingAlert1 = false
     @State private var showingAlert2 = false
-    
-    //    @State var petSelected: PetsItem
-    //
-    //    init(moc: NSManagedObjectContext) {
-    //        let fetchRequest: NSFetchRequest<PetsItem> = PetsItem.fetchRequest()
-    //        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \PetsItem.name_pets, ascending: true)]
-    //        fetchRequest.predicate = NSPredicate(value: true)
-    //        self._pets = FetchRequest(fetchRequest: fetchRequest)
-    //
-    //        do {
-    //            let namePet = try moc.fetch(fetchRequest)
-    //            self._petSelected = State(initialValue: namePet[0])
-    //        } catch {
-    //            fatalError("Uh, fetch problem")
-    //        }
-    //    }
-    
+        
     var body: some View {
         
         NavigationStack {
