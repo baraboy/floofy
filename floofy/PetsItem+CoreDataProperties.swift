@@ -2,7 +2,7 @@
 //  PetsItem+CoreDataProperties.swift
 //  floofy
 //
-//  Created by Patrick Samuel Owen Saritua Sinaga on 10/06/23.
+//  Created by Patrick Samuel Owen Saritua Sinaga on 11/06/23.
 //
 //
 
@@ -21,12 +21,21 @@ extension PetsItem {
     @NSManaged public var name_pets: String?
     @NSManaged public var pet_category: String?
     @NSManaged public var reminder: NSSet?
+    @NSManaged public var activity: NSSet?
     
     public var reminderArray: [ReminderItem] {
         let reminderSet = reminder as? Set<ReminderItem> ?? []
         
-        return reminderSet.sorted {
+        return reminderSet.sorted{
             $0.unWrappedLabel < $1.unWrappedLabel
+        }
+    }
+    
+    public var activityArray: [CobaItem] {
+        let reminderSet = activity as? Set<CobaItem> ?? []
+        
+        return reminderSet.sorted{
+            $0.unWrappedDescription < $1.unWrappedDescription
         }
     }
 
@@ -46,6 +55,23 @@ extension PetsItem {
 
     @objc(removeReminder:)
     @NSManaged public func removeFromReminder(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for activity
+extension PetsItem {
+
+    @objc(addActivityObject:)
+    @NSManaged public func addToActivity(_ value: CobaItem)
+
+    @objc(removeActivityObject:)
+    @NSManaged public func removeFromActivity(_ value: CobaItem)
+
+    @objc(addActivity:)
+    @NSManaged public func addToActivity(_ values: NSSet)
+
+    @objc(removeActivity:)
+    @NSManaged public func removeFromActivity(_ values: NSSet)
 
 }
 

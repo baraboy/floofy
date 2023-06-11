@@ -49,62 +49,52 @@ struct DetailPetView: View {
                             RoundedRectangle(cornerRadius: 5, style: .continuous)
                                 .stroke(CustomColor.primaryColor, lineWidth: 2)
                                 .frame(width: 359, height: 152)
+                                .overlay(
+                                
+                                    List {
+                                        
+                                        ForEach(selectionPet.activityArray) { activityPet in
+                                            
+                                            HStack() {
+                                                    
+                                                    Image(uiImage: UIImage(data: activityPet.image_coba ?? Data()) ?? UIImage())
+                                                        .resizable()
+                                                        .frame(width: 66, height: 52)
+                                                        .scaledToFit()
+                                                    
+                                                    
+                                                    
+                                                    VStack(alignment: .leading) {
+                                                        Text("Scan 1")
+                                                            .font(.system(size: 17, weight: .regular))
+                                                        
+                                                        Text("Scabies")
+                                                            .font(.system(size: 15, weight: .regular))
+                                                        
+                                                        
+                                                    }
+                                                    
+                                                    Spacer()
+                                                    
+                                                    Text(activityPet.date_coba ?? Date(), style: .date)
+                                                        .font(.system(size: 12, weight: .regular))
+                                                        .foregroundColor(.gray)
+                                                    
+                                                
+                                                
+                                            }
+                                            
+                                            
+                                        }
+                                    }
+                                    .frame(width: 390,height: 180)
+                                    .scrollContentBackground(.hidden)
+                                    .padding(.bottom, 30)
+                                    .padding(.top, 20)
+                                    .padding(.trailing, 5)
+                                
+                                )
                             
-                            List {
-                                HStack() {
-                                    Image("article_image2")
-                                        .resizable()
-                                        .frame(width: 66, height: 52)
-                                        .scaledToFit()
-                                    
-                                    
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text("Scan 1")
-                                            .font(.system(size: 17, weight: .regular))
-                                        
-                                        Text("Scabies")
-                                            .font(.system(size: 15, weight: .regular))
-                                        
-                                        
-                                    }
-                                    
-                                    Spacer()
-                                    
-                                    Text("02/02/2023")
-                                        .font(.system(size: 12, weight: .regular))
-                                        .foregroundColor(.gray)
-                                }
-                                
-                                HStack() {
-                                    Image("article_image2")
-                                        .resizable()
-                                        .frame(width: 66, height: 52)
-                                        .scaledToFit()
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text("Scan 1")
-                                            .font(.system(size: 17, weight: .regular))
-                                        
-                                        Text("Scabies")
-                                            .font(.system(size: 15, weight: .regular))
-                                        
-                                        
-                                    }
-                                    
-                                    Spacer()
-                                    
-                                    Text("02/02/2023")
-                                        .font(.system(size: 12, weight: .regular))
-                                        .foregroundColor(.gray)
-                                }
-                                
-                            }
-                            .frame(width: 390,height: 210)
-                            .scrollContentBackground(.hidden)
-                            .padding(.bottom, 30)
-                            .padding(.top, 20)
-                            .padding(.trailing, 5)
 
                         }
                     }

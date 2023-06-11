@@ -11,27 +11,29 @@ import CoreData
 
 struct GroomingInputView: View {
     
-    @State var email = ""
+    @State var textTextfield = ""
     
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
     @Environment(\.managedObjectContext) var moc
     
+    @Environment(\.dismiss) var dismiss
+    
     @State var petSelected: PetsItem
     
     init(moc: NSManagedObjectContext) {
-            let fetchRequest: NSFetchRequest<PetsItem> = PetsItem.fetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \PetsItem.name_pets, ascending: true)]
-            fetchRequest.predicate = NSPredicate(value: true)
-            self._pets = FetchRequest(fetchRequest: fetchRequest)
-
-            do {
-                let namePet = try moc.fetch(fetchRequest)
-                self._petSelected = State(initialValue: namePet[0])
-            } catch {
-                fatalError("Uh, fetch problem")
-            }
+        let fetchRequest: NSFetchRequest<PetsItem> = PetsItem.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \PetsItem.name_pets, ascending: true)]
+        fetchRequest.predicate = NSPredicate(value: true)
+        self._pets = FetchRequest(fetchRequest: fetchRequest)
+        
+        do {
+            let namePet = try moc.fetch(fetchRequest)
+            self._petSelected = State(initialValue: namePet[0])
+        } catch {
+            fatalError("Uh, fetch problem")
         }
-
+    }
+    
     
     @State private var repeatReminderIndex = 0
     var repeatReminderSelection = ["Weekly", "Monthly"]
@@ -41,6 +43,7 @@ struct GroomingInputView: View {
     
     
     var body: some View {
+        
         VStack() {
             Spacer()
             HStack {
@@ -98,9 +101,9 @@ struct GroomingInputView: View {
                     .font(.system(size: 17, weight: .semibold))
                     .padding(.leading, 20)
                 
-                TextField("Test", text: self.$email)
-                    .background(RoundedRectangle(cornerRadius:8, style: .continuous).stroke(CustomColor.primaryColor, lineWidth: 3))
-                    .padding(.leading, 20)
+                TextField("Test", text: self.$textTextfield, axis: .vertical)
+                    .background(RoundedRectangle(cornerRadius:8, style: .continuous).stroke(CustomColor.primaryColor, lineWidth: 3)).padding(.leading, 30).padding(.trailing, 30)
+                    .lineLimit(5, reservesSpace: true)
                 
                 Form {
                     Section() {
@@ -122,19 +125,37 @@ struct GroomingInputView: View {
             
             CustomButton(text: "Done") {
                 
-                //saveRemindertoCoreData()
-
-                //dismiss()
+                saveToCoreData()
+                
+                dismiss()
             }
+            .disabled(textTextfield.isEmpty)
+            
+            
             
             
             Spacer()
+        }
+    }
+    
+    func saveToCoreData() {
+        let activity = CobaItem(context: moc)
+        activity.date_coba = Date()
+        activity.description_coba = textTextfield
+        activity.image_coba = selectedImageData
+        
+        petSelected.addToActivity(activity)
+        
+        do {
+            try? moc.save()
+        } catch {
+            fatalError("Error: \(error.localizedDescription)")
         }
     }
 }
 
 //struct GroomingInputView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        GroomingInputView(petSelected: pets)
+//        GroomingInputView(moc: moc)
 //    }
 //}

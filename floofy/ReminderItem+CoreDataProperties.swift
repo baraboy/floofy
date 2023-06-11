@@ -2,7 +2,7 @@
 //  ReminderItem+CoreDataProperties.swift
 //  floofy
 //
-//  Created by Patrick Samuel Owen Saritua Sinaga on 10/06/23.
+//  Created by Patrick Samuel Owen Saritua Sinaga on 11/06/23.
 //
 //
 
