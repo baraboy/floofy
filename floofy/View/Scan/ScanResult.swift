@@ -45,7 +45,7 @@ struct ScanResult: View {
             Text("Classification: \(confidencePercentage) \(classificationLabel)")
                 .padding(.bottom,1)
             
-            Text("The image of \(petSelected?.name_pets ?? "default") above has a classification of \(classificationLabel) (\(confidencePercentage)), you should take \(petSelected?.name_pets ?? "default") to the vet.")
+            Text("The image of \(petSelected?.name_pets ?? "name cat/dog") above has a classification of \(classificationLabel) (\(confidencePercentage)), you should take \(petSelected?.name_pets ?? "name cat/dog") to the vet.")
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 1)
             
