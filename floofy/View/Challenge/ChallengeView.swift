@@ -25,7 +25,6 @@ struct ChallengeView: View {
     @State var countCoreDataCoba: Int = 0
     
     @State private var showingFirstAlert: Bool = false
-    @State private var showingAlert2 = false
     @State var alertType: AlertType = .none
         
     var body: some View {
@@ -42,6 +41,7 @@ struct ChallengeView: View {
                             alertType = .alert1
                         } else {
                             showView.toggle()
+                            countCoreDataCoba = coba.count
                         }
                         
                     } else {
@@ -328,6 +328,9 @@ struct ChallengeView: View {
                 }
             }
             
+            .onChange(of: showView){newValue in
+                countCoreDataCoba = coba.count
+            }
             .onAppear {
                 countCoreDataCoba = coba.count
             }

@@ -62,7 +62,7 @@ struct AddPetView: View {
                         photoLibrary: .shared()) {
                             Text("Add Photo")
                                 .font(.system(size: 17, weight: .semibold))
-                                .foregroundColor(.black)
+                                
                         }
                         .onChange(of: selectedItem) { newItem in
                             Task {
