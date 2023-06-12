@@ -21,6 +21,7 @@ private let onBoardingSteps = [
 struct OnboardingView: View {
     
     @State private var currentStep = 0
+    @AppStorage("sign_in") var wasSigned: Bool = false
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
     
     var body: some View {
@@ -115,6 +116,9 @@ struct OnboardingView: View {
                                 .cornerRadius(16)
                                 .padding(.horizontal, 16)
                                 .foregroundColor(.white)
+                                .onTapGesture {
+                                    wasSigned = true
+                                }
                         })
                 }
             }
