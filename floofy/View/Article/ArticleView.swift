@@ -39,7 +39,7 @@ struct ArticleCard: View {
                 .cornerRadius(10)
             
             Rectangle()
-                .foregroundColor(Color.gray.opacity(0.9))
+                .foregroundColor(Color.gray.opacity(0.7))
                 .frame(maxWidth: .infinity)
                 .padding(.top, 165)
             
