@@ -74,11 +74,13 @@ struct ReminderView: View {
                                     VStack(alignment: .leading) {
                                         
                                         Text(reminder.label ?? "Unknown")
+                                            .foregroundColor(.black)
                                         
                                         HStack() {
                                             
                                             Text(reminder.repeat_item ?? "Unknown")
                                                 .fontWeight(.ultraLight)
+                                                .foregroundColor(.black)
                                         }
                                     }
                                     
