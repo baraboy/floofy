@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ScanResult: View {
-    @Environment(\.presentationMode) var presentationMode
+    
+    @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
+    
     
     var classificationLabel: String
     var confidencePercentage: String
     var imageSelected: UIImage
-    @Binding var selectedAnimal: String
     @State private var showAlert = false
+    
+    @State var petSelected: PetsItem?
+    
+    @Environment(\.presentationMode) var presentationMode
     
     
     var body: some View {
@@ -26,12 +31,12 @@ struct ScanResult: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)
             
-            Picker("Select Animal", selection: $selectedAnimal) {
-                Text("Hengki").tag("Hengki")
-                Text("Happy").tag("Happy")
-                Text("Scoopy").tag("Scoopy")
+            Picker(selection: $petSelected, label: Text("Pet").foregroundColor(.black)) {
+                ForEach(pets, id: \.self) { pet in
+                    Text(pet.name_pets ?? "Unknown")
+                        .tag(pet as PetsItem?)
+                }
             }
-            .foregroundColor(.black)
             
             Text("\(classificationLabel)")
                 .font(.headline)
@@ -40,7 +45,7 @@ struct ScanResult: View {
             Text("Classification: \(confidencePercentage) \(classificationLabel)")
                 .padding(.bottom,1)
             
-            Text("The image of \(selectedAnimal) above has a classification of \(classificationLabel) (\(confidencePercentage)), you should take \(selectedAnimal) to the vet.")
+            Text("The image of \(petSelected?.name_pets ?? "default") above has a classification of \(classificationLabel) (\(confidencePercentage)), you should take \(petSelected?.name_pets ?? "default") to the vet.")
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 1)
             
@@ -105,8 +110,7 @@ struct ScanResult_Previews: PreviewProvider {
         ScanResult(
             classificationLabel: "Cat",
             confidencePercentage: "80%",
-            imageSelected: UIImage(),
-            selectedAnimal: .constant("Select your pet")
+            imageSelected: UIImage()
         )
     }
 }

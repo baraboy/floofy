@@ -18,6 +18,9 @@ class ScanViewModel: ObservableObject {
     @Published var classificationLabel: String = ""
     @Published var confidencePercentage: String = ""
     
+    @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
+    @Environment(\.managedObjectContext) var moc
+    
     
     struct LoadingError: Error, Identifiable {
         let id = UUID()
@@ -99,7 +102,7 @@ struct ScanView: View {
                     .foregroundColor(Color("PrimaryColor"))
                 
                 NavigationLink(
-                    destination: ScanResult(classificationLabel: viewModel.classificationLabel, confidencePercentage: viewModel.confidencePercentage, imageSelected: viewModel.imageSelected, selectedAnimal: $selectedAnimal),
+                    destination: ScanResult( classificationLabel: viewModel.classificationLabel, confidencePercentage: viewModel.confidencePercentage, imageSelected: viewModel.imageSelected),
                     isActive: $showClassificationSheet,
                     label: { EmptyView() }
                 )

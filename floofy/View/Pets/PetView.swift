@@ -11,7 +11,7 @@ struct PetView: View {
     
     @State private var showView = false
     
-    @Environment(\.managedObjectContext) var moc
+    //@Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
     
     @State var selectedLabelCategory: Category = .grooming
