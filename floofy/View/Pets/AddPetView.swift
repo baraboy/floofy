@@ -110,6 +110,8 @@ struct AddPetView: View {
                     
                     saveDatatoCoreData()
                 }
+                .disabled(namePet.isEmpty)
+                
                 
                 Spacer()
                 
