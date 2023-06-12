@@ -92,6 +92,7 @@ struct ScanView: View {
                 
                 Image("onboarding1")
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 393, height: 393)
                 
                 Text("Scan your cat's or dog’s skin to know the classification of ringworm and scabies diseases")
