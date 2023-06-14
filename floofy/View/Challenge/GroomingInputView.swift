@@ -133,6 +133,7 @@ struct GroomingInputView: View {
                 dismiss()
             }
             .disabled(textTextfield.isEmpty)
+            .disabled(selectedImageData?.isEmpty ?? true )
             
             
             

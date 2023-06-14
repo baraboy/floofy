@@ -55,6 +55,7 @@ struct PetView: View {
                     }
                     
                 } else {
+                
                     VStack() {
                         Text("Cats")
                             .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -106,8 +107,8 @@ struct PetView: View {
                                                                                 
 
                                                                             VStack() {
-                                                                                
-                                                                                ForEach(pet.reminderArray){ reminder in
+                                                                  
+                                                                        ForEach(pet.reminderArray){ reminder in
                                                                                     
                                                                                     let dateNow = Date()
                                                                                     

@@ -31,6 +31,8 @@ struct AddPetView: View {
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
     
+    var checker: Bool = false
+    
     
     var body: some View {
         
@@ -111,6 +113,7 @@ struct AddPetView: View {
                     saveDatatoCoreData()
                 }
                 .disabled(namePet.isEmpty)
+                .disabled(selectedImageData?.isEmpty ?? true )
                 
                 
                 Spacer()

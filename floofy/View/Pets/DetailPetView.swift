@@ -43,19 +43,21 @@ struct DetailPetView: View {
                             .padding(.leading, 15)
                             .foregroundColor(.black)
                         
+            
                         
-                        
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                .stroke(CustomColor.primaryColor, lineWidth: 2)
-                                .frame(width: 359, height: 152)
-                                .overlay(
-                                
-                                    List {
+                        if !selectionPet.activityArray.isEmpty {
+                            
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                    .stroke(CustomColor.primaryColor, lineWidth: 2)
+                                    .frame(width: 359, height: 152)
+                                    .overlay(
                                         
-                                        ForEach(selectionPet.activityArray) { activityPet in
+                                        List {
                                             
-                                            HStack() {
+                                            ForEach(selectionPet.activityArray) { activityPet in
+                                                
+                                                HStack() {
                                                     
                                                     Image(uiImage: UIImage(data: activityPet.image_coba ?? Data()) ?? UIImage())
                                                         .resizable()
@@ -73,7 +75,7 @@ struct DetailPetView: View {
                                                             .font(.system(size: 15, weight: .regular))
                                                             .foregroundColor(.black)
                                                         
-
+                                                        
                                                     }
                                                     
                                                     Spacer()
@@ -82,25 +84,42 @@ struct DetailPetView: View {
                                                         .font(.system(size: 12, weight: .regular))
                                                         .foregroundColor(.gray)
                                                     
+                                                    
+                                                    
+                                                }
                                                 
                                                 
                                             }
-                                            
-                                            
                                         }
-                                    }
-                                    .frame(width: 350,height: 140)
-                                    .scrollContentBackground(.hidden)
-                                    .padding(.bottom, 50)
-                                    .padding(.top, 20)
-                                    .padding(.trailing, 5)
-                                    .padding(.leading, 5)
-                                    .offset(y: 10)
+                                            .frame(width: 350,height: 140)
+                                            .scrollContentBackground(.hidden)
+                                            .padding(.bottom, 50)
+                                            .padding(.top, 20)
+                                            .padding(.trailing, 5)
+                                            .padding(.leading, 5)
+                                            .offset(y: 10)
+                                        
+                                    )
+                            }
                                 
-                                )
+                            } else {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                        .stroke(CustomColor.primaryColor, lineWidth: 2)
+                                        .frame(width: 359, height: 152)
+                                        .overlay(
+                                            
+                                        Text("There is no activity of grooming")
+                                            .font(.system(size: 17, weight: .semibold))
+                                            .foregroundColor(.black)
+                                        
+                                        )
+                                }
+                            }
                             
-
                         }
+                        
+                        
                     }
                     Spacer()
                 }
@@ -120,7 +139,7 @@ struct DetailPetView: View {
         }
         
     }
-}
+
 
 //struct DetailPetView_Previews: PreviewProvider {
 //    static var previews: some View {
