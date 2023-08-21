@@ -25,113 +25,17 @@ struct BadgesView: View {
                                     Spacer()
                                     HStack {
                                         Spacer()
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 1 {
-                                                Image("lockBadges1")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges1")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 2 {
-                                                Image("lockBadges2")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges2")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 3 {
-                                                Image("lockBadges3")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges3")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 4 {
-                                                Image("lockBadges4")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges4")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges1", nameBadges: "bathBadges1")
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges2", nameBadges: "bathBadges2")
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges3", nameBadges: "bathBadges3")
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
                                         Spacer()
                                     }
                                     .padding(.top, 10)
                                     HStack {
                                         Spacer()
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 4 {
-                                                Image("lockBadges5")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges5")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 4 {
-                                                Image("lockBadges6")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges6")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges6", nameBadges: "bathBadges6")
                                         Spacer()
                                     }
                                     Spacer()
@@ -151,57 +55,9 @@ struct BadgesView: View {
                                 VStack(spacing: 30) {
                                     HStack {
                                         Spacer()
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 4 {
-                                                Image("lockBadges4")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges4")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 4 {
-                                                Image("lockBadges4")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges4")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
-                                        ZStack {
-                                            Circle()
-                                                .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                                .frame(width: 55, height: 52)
-                                                .padding(.leading, 10)
-                                            if coba.count < 4 {
-                                                Image("lockBadges4")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            } else {
-                                                Image("bathBadges4")
-                                                    .resizable()
-                                                    .frame(width: 33, height: 33)
-                                                    .padding(.leading, 10)
-                                            }
-                                        }
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
+                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
                                         Spacer()
                                     }
                                     .padding(.top, 30)

@@ -35,6 +35,9 @@
 		F752BB5B2A31B32E0062F4B7 /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */; };
 		F7558FBE2A332CF1003746A9 /* DetailPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7558FBD2A332CF1003746A9 /* DetailPetView.swift */; };
 		F778FC662A9348DD00F0A620 /* ChallengeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC652A9348DD00F0A620 /* ChallengeData.swift */; };
+		F778FC692A93B4DF00F0A620 /* CardViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC682A93B4DF00F0A620 /* CardViewItem.swift */; };
+		F778FC6B2A93B53400F0A620 /* CircleViewBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC6A2A93B53400F0A620 /* CircleViewBadge.swift */; };
+		F778FC6D2A93B6FF00F0A620 /* CardPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC6C2A93B6FF00F0A620 /* CardPetView.swift */; };
 		F790BF6B2A31DBCE007CA255 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */; };
 		F790BF6E2A31E4B6007CA255 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6D2A31E4B6007CA255 /* CustomButton.swift */; };
 		F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793222A29136B00F5F5EC /* ReminderView.swift */; };
@@ -76,6 +79,9 @@
 		F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
 		F7558FBD2A332CF1003746A9 /* DetailPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPetView.swift; sourceTree = "<group>"; };
 		F778FC652A9348DD00F0A620 /* ChallengeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeData.swift; sourceTree = "<group>"; };
+		F778FC682A93B4DF00F0A620 /* CardViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewItem.swift; sourceTree = "<group>"; };
+		F778FC6A2A93B53400F0A620 /* CircleViewBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewBadge.swift; sourceTree = "<group>"; };
+		F778FC6C2A93B6FF00F0A620 /* CardPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPetView.swift; sourceTree = "<group>"; };
 		F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		F790BF6D2A31E4B6007CA255 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F79793222A29136B00F5F5EC /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 		338C7D462A21F7C7000778EE /* floofy */ = {
 			isa = PBXGroup;
 			children = (
+				F778FC672A93A9CA00F0A620 /* ViewModel */,
 				F70CD35B2A35B4EB002A9387 /* PetsItem+CoreDataClass.swift */,
 				F70CD35C2A35B4EB002A9387 /* PetsItem+CoreDataProperties.swift */,
 				F70CD35D2A35B4EB002A9387 /* CobaItem+CoreDataClass.swift */,
@@ -228,12 +235,22 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		F778FC672A93A9CA00F0A620 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F790BF6C2A31DE05007CA255 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */,
 				F790BF6D2A31E4B6007CA255 /* CustomButton.swift */,
 				F70CD32D2A34CF9B002A9387 /* CustomColor.swift */,
+				F778FC682A93B4DF00F0A620 /* CardViewItem.swift */,
+				F778FC6A2A93B53400F0A620 /* CircleViewBadge.swift */,
+				F778FC6C2A93B6FF00F0A620 /* CardPetView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -347,6 +364,7 @@
 				338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */,
 				F70CD32E2A34CF9B002A9387 /* CustomColor.swift in Sources */,
 				F70CD3322A34DED3002A9387 /* GroomingInputView.swift in Sources */,
+				F778FC692A93B4DF00F0A620 /* CardViewItem.swift in Sources */,
 				33B316EB2A34E36000546017 /* ArticleData.swift in Sources */,
 				F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */,
 				336B3A262A346B6D00599A6C /* ImagePicker.swift in Sources */,
@@ -354,6 +372,7 @@
 				338C7D482A21F7C7000778EE /* FloofyApp.swift in Sources */,
 				F70CD3652A35B4EB002A9387 /* ReminderItem+CoreDataClass.swift in Sources */,
 				F790BF6E2A31E4B6007CA255 /* CustomButton.swift in Sources */,
+				F778FC6D2A93B6FF00F0A620 /* CardPetView.swift in Sources */,
 				F70CD3632A35B4EB002A9387 /* CobaItem+CoreDataClass.swift in Sources */,
 				F752BB5B2A31B32E0062F4B7 /* AddPetView.swift in Sources */,
 				F70CD3622A35B4EB002A9387 /* PetsItem+CoreDataProperties.swift in Sources */,
@@ -372,6 +391,7 @@
 				F70CD3302A34D549002A9387 /* BadgesView.swift in Sources */,
 				336B3A2D2A346C4800599A6C /* ScanView.swift in Sources */,
 				F70CD3612A35B4EB002A9387 /* PetsItem+CoreDataClass.swift in Sources */,
+				F778FC6B2A93B53400F0A620 /* CircleViewBadge.swift in Sources */,
 				F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */,
 				336B3A2B2A346BF400599A6C /* ScanResult.swift in Sources */,
 				3360C2282A363332009896AC /* FloofyModel.mlmodel in Sources */,

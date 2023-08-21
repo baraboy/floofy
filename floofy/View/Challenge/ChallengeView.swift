@@ -40,121 +40,13 @@ struct ChallengeView: View {
                         .overlay(
                             HStack {
                                 if countCoreDataCoba == 1 {
-                                    ZStack {
-                                        Circle()
-                                            .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                            .frame(width: 43, height: 41)
-                                            .padding(.leading, 10)
-                                        Image("bathBadges1")
-                                            .resizable()
-                                            .frame(width: 25, height: 25)
-                                            .padding(.leading, 10)
-                                    }
-                                    VStack(alignment: .leading) {
-                                        Text("Bathe your pet 3 times!")
-                                            .font(.system(size: 17, weight: .bold))
-                                            .foregroundColor(.black)
-                                        HStack {
-                                            ZStack(alignment: .leading) {
-                                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                    .fill(CustomColor.challengeFirstColor)
-                                                    .frame(width: 247, height: 10)
-                                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                    .fill(CustomColor.challengeSecondColor)
-                                                    .frame(width: 100, height: 10)
-                                            }
-                                            Text("1/3")
-                                                .font(.system(size: 15, weight: .bold))
-                                                .foregroundColor(CustomColor.primaryColor)
-                                        }
-                                    }
+                                    CardViewItem(title: "Bathe your pet 3 times!", imageName: "bathBadges1", widthFrameNumber: 100, textNumberCount: "1/3")
                                 } else if countCoreDataCoba == 2 {
-                                    ZStack {
-                                        Circle()
-                                            .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                            .frame(width: 43, height: 41)
-                                            .padding(.leading, 10)
-                                        Image("bathBadges2")
-                                            .resizable()
-                                            .frame(width: 25, height: 25)
-                                            .padding(.leading, 10)
-                                    }
-                                    VStack(alignment: .leading) {
-                                        Text("Bathe your pet 3 times!")
-                                            .font(.system(size: 17, weight: .bold))
-                                            .foregroundColor(.black)
-                                        HStack {
-                                            ZStack(alignment: .leading) {
-                                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                    .fill(CustomColor.challengeFirstColor)
-                                                    .frame(width: 247, height: 10)
-                                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                    .fill(CustomColor.challengeSecondColor)
-                                                    .frame(width: 177, height: 10)
-                                            }
-                                            Text("2/3")
-                                                .font(.system(size: 15, weight: .bold))
-                                                .foregroundColor(CustomColor.primaryColor)
-                                        }
-                                    }
+                                    CardViewItem(title: "Bathe your pet 3 times!", imageName: "bathBadges2", widthFrameNumber: 177, textNumberCount: "2/3")
                                 } else if countCoreDataCoba == 3 {
-                                    ZStack {
-                                        Circle()
-                                            .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                            .frame(width: 43, height: 41)
-                                            .padding(.leading, 10)
-                                        Image("bathBadges3")
-                                            .resizable()
-                                            .frame(width: 25, height: 25)
-                                            .padding(.leading, 10)
-                                    }
-                                    VStack(alignment: .leading) {
-                                        Text("Bathe your pet 3 times!")
-                                            .font(.system(size: 17, weight: .bold))
-                                            .foregroundColor(.black)
-                                        HStack {
-                                            ZStack(alignment: .leading) {
-                                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                    .fill(CustomColor.challengeFirstColor)
-                                                    .frame(width: 247, height: 10)
-                                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                    .fill(CustomColor.challengeSecondColor)
-                                                    .frame(width: 247, height: 10)
-                                            }
-                                            Text("3/3")
-                                                .font(.system(size: 15, weight: .bold))
-                                                .foregroundColor(CustomColor.primaryColor)
-                                        }
-                                    }
+                                    CardViewItem(title: "Bathe your pet 3 times!", imageName: "bathBadges3", widthFrameNumber: 247, textNumberCount: "3/3")
                                 } else if countCoreDataCoba == 0 {
-                                    ZStack {
-                                        Circle()
-                                            .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                            .frame(width: 43, height: 41)
-                                            .padding(.leading, 10)
-                                        Image("bathBadges1")
-                                            .resizable()
-                                            .frame(width: 25, height: 25)
-                                            .padding(.leading, 10)
-                                    }
-                                    VStack(alignment: .leading) {
-                                        Text("Bathe your pet 3 times!")
-                                            .font(.system(size: 17, weight: .bold))
-                                            .foregroundColor(.black)
-                                        HStack {
-                                            ZStack(alignment: .leading) {
-                                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                    .fill(CustomColor.challengeFirstColor)
-                                                    .frame(width: 247, height: 10)
-                                                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                    .fill(CustomColor.challengeSecondColor)
-                                                    .frame(width: 0, height: 10)
-                                            }
-                                            Text("0/3")
-                                                .font(.system(size: 15, weight: .bold))
-                                                .foregroundColor(CustomColor.primaryColor)
-                                        }
-                                    }
+                                    CardViewItem(title: "Bathe your pet 3 times!", imageName: "bathBadges1", widthFrameNumber: 0, textNumberCount: "0/3")
                                 }
                             }
                                 .padding(.trailing, 10)
@@ -177,33 +69,7 @@ struct ChallengeView: View {
                         .frame(width: 359, height: 73)
                         .overlay(
                             HStack {
-                                ZStack {
-                                    Circle()
-                                        .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                        .frame(width: 43, height: 41)
-                                        .padding(.leading, 10)
-                                    Image("cleanBadges1")
-                                        .resizable()
-                                        .frame(width: 25, height: 25)
-                                        .padding(.leading, 10)
-                                }
-                                VStack(alignment: .leading) {
-                                    Text("Clean the cage 3 times!")
-                                        .font(.system(size: 17, weight: .bold))
-                                    HStack {
-                                        ZStack(alignment: .leading) {
-                                            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                .fill(CustomColor.challengeFirstColor)
-                                                .frame(width: 247, height: 10)
-                                            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                .fill(CustomColor.challengeSecondColor)
-                                                .frame(width: 100, height: 10)
-                                        }
-                                        Text("1/3")
-                                            .font(.system(size: 15, weight: .bold))
-                                            .foregroundColor(CustomColor.primaryColor)
-                                    }
-                                }
+                                CardViewItem(title: "Clean the cage 3 times1", imageName: "cleanBadges1", widthFrameNumber: 100, textNumberCount: "1/3")
                             }
                                 .padding(.trailing, 10)
                         )
@@ -215,35 +81,8 @@ struct ChallengeView: View {
                         .frame(width: 359, height: 73)
                         .overlay(
                             HStack {
-                                ZStack {
-                                    Circle()
-                                        .strokeBorder(CustomColor.primaryColor, lineWidth: 2)
-                                        .frame(width: 43, height: 41)
-                                        .padding(.leading, 10)
-                                    Image("specialMissionBadges")
-                                        .resizable()
-                                        .frame(width: 25, height: 25)
-                                        .padding(.leading, 10)
-                                }
-                                VStack(alignment: .leading) {
-                                    Text("Clean the cage 2 times a week")
-                                        .font(.system(size: 17, weight: .bold))
-                                    HStack {
-                                        ZStack(alignment: .leading) {
-                                            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                .fill(CustomColor.challengeFirstColor)
-                                                .frame(width: 247, height: 10)
-                                            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                .fill(CustomColor.challengeSecondColor)
-                                                .frame(width: 123, height: 10)
-                                        }
-                                        Text("1/2")
-                                            .font(.system(size: 15, weight: .bold))
-                                            .foregroundColor(CustomColor.primaryColor)
-                                    }
-                                }
+                                CardViewItem(title: "Clean the cage 2 times a week", imageName: "specialMissionBadges", widthFrameNumber: 123, textNumberCount: "1/2")
                             }
-                                .padding(.trailing, 10)
                         )
                     Spacer()
                 }
