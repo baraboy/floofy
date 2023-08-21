@@ -12,5 +12,4 @@ struct CustomColor {
     static let challengeFirstColor = Color("Challenge1Color")
     static let challengeSecondColor = Color("Challenge2Color")
     static let primaryColor = Color("PrimaryColor")
-    
 }

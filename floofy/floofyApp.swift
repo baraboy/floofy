@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct floofyApp: App {
-    
+struct FloofyApp: App {
+
     @StateObject private var dataController = DataController()
-    
+
     var body: some Scene {
         WindowGroup {
             SplashView()

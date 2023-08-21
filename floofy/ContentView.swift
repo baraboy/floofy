@@ -8,32 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @Environment(\.managedObjectContext) var moc
-    
+
     var body: some View {
-        VStack{
-            TabView(){
+        VStack {
+            TabView {
                 ChallengeView()
-                    .tabItem{
+                    .tabItem {
                         Image(systemName: "gamecontroller")
                         Text("Missions")
                     }
                     .tag(0)
                 ScanView()
-                    .tabItem{
+                    .tabItem {
                         Image(systemName: "camera.viewfinder")
                         Text("Scan")
                     }
                     .tag(1)
                 ArticleView()
-                    .tabItem{
+                    .tabItem {
                         Image(systemName: "newspaper")
                         Text("Articles")
                     }
                     .tag(2)
                 PetView()
-                    .tabItem{
+                    .tabItem {
                         Image(systemName: "pawprint")
                         Text("Pet")
                     }
@@ -44,7 +44,7 @@ struct ContentView: View {
         .foregroundColor(Color("PrimaryColor"))
         .preferredColorScheme(.light)
         .navigationBarBackButtonHidden()
-        
+
     }
 }
 

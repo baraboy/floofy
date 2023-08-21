@@ -7,43 +7,39 @@
 
 import SwiftUI
 
-struct OnBoardingStep {
-    let image: String
-    let description : String
-}
-
-private let onBoardingSteps = [
-    OnBoardingStep(image: "onboarding1", description: "Scan your cat or dog’s skin to know the classification of ringworm and scabies diseases"),
-    OnBoardingStep(image: "onboarding2", description: "Get notifications about your cat's or dog's schedule that you have set in advance."),
-    OnBoardingStep(image: "onboarding3", description: "With the missions, keeping your pets healthy will never be this fun!")]
-
-
 struct OnboardingView: View {
-    
+
     @State private var currentStep = 0
     @AppStorage("sign_in") var wasSigned: Bool = false
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
-    
+
+    private let onboardingStep = [
+        OnboardingStep(image: "onboarding1",
+                       description: "Scan your cat or dog’s skin to know the classification of ringworm and scabies diseases"),
+        OnboardingStep(image: "onboarding2",
+                       description: "Get notifications about your cat's or dog's schedule that you have set in advance."),
+        OnboardingStep(image: "onboarding3",
+                       description: "With the missions, keeping your pets healthy will never be this fun!")]
+
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack {
-                if currentStep != onBoardingSteps.count - 1 {
+                if currentStep != onboardingStep.count - 1 {
                     HStack {
                         Spacer()
-                        Button(action: {
-                            self.currentStep = onBoardingSteps.count - 1
-                        }) {
+                        Button {
+                            self.currentStep = onboardingStep.count - 1
+                        } label: {
                             Text("Skip")
                                 .padding(.horizontal, 28)
                                 .foregroundColor(.gray)
                         }
                     }
-                }
-                else{
+                } else {
                     HStack {
                         Spacer()
-                        Button(action: {
-                        }) {
+                        Button {
+                        } label: {
                             Text("Skip")
                                 .padding(.horizontal, 28)
                                 .foregroundColor(.white)
@@ -55,15 +51,15 @@ struct OnboardingView: View {
                     .bold()
                     .foregroundColor(Color("PrimaryColor"))
                     .offset(y: 50)
-                
+
                 TabView(selection: $currentStep) {
-                    ForEach(0..<onBoardingSteps.count, id: \.self) { step in
+                    ForEach(0..<onboardingStep.count, id: \.self) { step in
                         VStack {
-                            Image(onBoardingSteps[step].image)
+                            Image(onboardingStep[step].image)
                                 .resizable()
                                 .frame(width: 300, height: 300)
-                            
-                            Text(onBoardingSteps[step].description)
+
+                            Text(onboardingStep[step].description)
                                 .bold()
                                 .multilineTextAlignment(.center)
                                 .padding(.horizontal, 20)
@@ -75,9 +71,9 @@ struct OnboardingView: View {
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                
+
                 HStack {
-                    ForEach(0..<onBoardingSteps.count, id: \.self) { step in
+                    ForEach(0..<onboardingStep.count, id: \.self) { step in
                         if step == currentStep {
                             Rectangle()
                                 .frame(width: 20, height: 10)
@@ -91,11 +87,11 @@ struct OnboardingView: View {
                     }
                 }
                 .padding(.bottom, 24)
-                
-                if currentStep < onBoardingSteps.count - 1 {
-                    Button(action: {
+
+                if currentStep < onboardingStep.count - 1 {
+                    Button {
                         self.currentStep += 1
-                    }) {
+                    } label: {
                         Text("Next")
                             .padding(16)
                             .frame(maxWidth: .infinity)
@@ -124,10 +120,8 @@ struct OnboardingView: View {
             }
             .background(Color.white)
         }
-        
     }
 }
-
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
