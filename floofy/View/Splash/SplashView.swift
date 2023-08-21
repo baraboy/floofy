@@ -8,19 +8,16 @@
 import SwiftUI
 
 struct SplashView: View {
-    
     @State var isActive: Bool = false
     @AppStorage("sign_in") var wasSigned: Bool = false
-    
     var body: some View {
         ZStack {
             Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255)
                 .ignoresSafeArea()
             if self.isActive {
-                if wasSigned{
+                if wasSigned {
                     ContentView()
-                }
-                else{
+                } else {
                     OnboardingView()
                 }
             } else {

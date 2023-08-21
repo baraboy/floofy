@@ -8,57 +8,42 @@
 import SwiftUI
 
 struct ScanResult: View {
-    
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
-    
-    
     var classificationLabel: String
     var confidencePercentage: String
     var imageSelected: UIImage
     @State private var showAlert = false
-    
     @State var petSelected: PetsItem?
-    
     @Environment(\.presentationMode) var presentationMode
-    
-    
     var body: some View {
-        
         VStack {
-            
             Image(uiImage: imageSelected)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)
-            
             Picker(selection: $petSelected, label: Text("Pet").foregroundColor(.black)) {
                 ForEach(pets, id: \.self) { pet in
-                    Text(pet.name_pets ?? "Unknown")
+                    Text(pet.namePets ?? "Unknown")
                         .tag(pet as PetsItem?)
                 }
             }
-            
             Text("\(classificationLabel)")
                 .font(.headline)
-                .padding(.bottom,1)
-            
+                .padding(.bottom, 1)
             Text("Classification: \(confidencePercentage) \(classificationLabel)")
-                .padding(.bottom,1)
-            
-            Text("The image of \(petSelected?.name_pets ?? "name cat/dog") above has a classification of \(classificationLabel) (\(confidencePercentage)), you should take \(petSelected?.name_pets ?? "name cat/dog") to the vet.")
+                .padding(.bottom, 1)
+            Text("The image of \(petSelected?.namePets ?? "name cat/dog") above has a classification of \(classificationLabel) (\(confidencePercentage)), you should take \(petSelected?.namePets ?? "name cat/dog") to the vet.")
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 1)
-            
             Text("If you want to know more about what \(classificationLabel) is, you can read it through the article.")
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 1)
-            HStack{
+            HStack {
                 Text("Veterinarian Location: ")
                     .bold()
                     .padding(.leading)
                 Spacer()
             }
-            
             LocationListView()
         }
         .foregroundColor(.black)
@@ -82,11 +67,10 @@ struct ScanResult: View {
             )
         }
     }
-    
     private var backButton: some View {
-        Button(action: {
+        Button {
             showAlert = true
-        }) {
+        } label: {
             HStack(spacing: 5) {
                 Image(systemName: "chevron.left")
                     .imageScale(.large)
@@ -94,16 +78,14 @@ struct ScanResult: View {
             }
         }
     }
-    
     private var doneButton: some View {
-        Button(action: {
+        Button {
             presentationMode.wrappedValue.dismiss()
-        }) {
+        } label: {
             Text("Done")
         }
     }
 }
-
 
 struct ScanResult_Previews: PreviewProvider {
     static var previews: some View {
@@ -114,4 +96,3 @@ struct ScanResult_Previews: PreviewProvider {
         )
     }
 }
-

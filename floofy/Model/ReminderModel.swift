@@ -12,6 +12,5 @@ struct ReminderModel: Identifiable {
     var nameActivity: String
     var name: String
     var repeatWhatDay: String
-    
     var enable: Bool = false
 }

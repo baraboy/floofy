@@ -8,127 +8,87 @@
 import SwiftUI
 
 struct PetView: View {
-    
     @State private var showView = false
-    
-    //@Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
-    
     @State var selectedLabelCategory: Category = .grooming
-    
     var body: some View {
-        
         NavigationStack {
-            
             VStack {
-                
                 if pets.isEmpty {
-                    
                     VStack(spacing: 30) {
                         Spacer()
                         Image("onboarding3")
                             .resizable()
-                            .frame(width: 326,height: 283)
-                        
+                            .frame(width: 326, height: 283)
                         Text("Looks like you did not have any pets yet.")
                             .font(.system(size: 17, weight: .semibold))
                             .multilineTextAlignment(.center)
-                        
                         Spacer()
                         Button {
                             showView.toggle()
-                            
                         } label: {
                             Text("Add Pet")
-                            
-                                .background(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255))
+                                .background(CustomColor.challengeFirstColor)
                                 .foregroundColor(.white)
                                 .fontWeight(.semibold)
-                                .frame(width: 300 , height: 40 ,alignment: .center)
+                                .frame(width: 300, height: 40, alignment: .center)
                         }
                         .sheet(isPresented: $showView) {
                             AddPetView()
                         }
-                        
                         .buttonStyle(.borderedProminent)
                         Spacer()
                     }
-                    
                 } else {
-                
-                    VStack() {
+                    VStack {
                         Text("Cats")
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .font(.system(.title2))
                             .padding(.leading, 15)
                             .foregroundColor(.black)
-                        
                         VStack {
-                            ScrollView(.vertical,showsIndicators: true) {
+                            ScrollView(.vertical, showsIndicators: true) {
                                 VStack(spacing: 15) {
-                                    
                                         ForEach(pets) { pet in
-                                            
-                                            if pet.pet_category == "Cat" {
-                                                
+                                            if pet.petCategory == "Cat" {
                                                 NavigationLink(destination: DetailPetView(selectionPet: pet)) {
-                                                    
                                                     ZStack {
                                                         RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                                            .stroke(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255), lineWidth: 2)
+                                                            .stroke(CustomColor.challengeFirstColor, lineWidth: 2)
                                                             .frame(width: 359, height: 152)
-                                                            
-                                                        
-                                                        VStack() {
-                                                                
+                                                    VStack {
                                                                 HStack {
-                                                                    
                                                                     Circle()
-                                                                        .strokeBorder(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255),lineWidth: 2)
+                                                                        .strokeBorder(CustomColor.challengeFirstColor, lineWidth: 2)
                                                                         .frame(width: 100, height: 100)
-                                                                        .overlay(
-                                                                            
-                                                                            
-                                                                                
-                                                                                Image(uiImage: UIImage(data: pet.image_pets ?? Data()) ?? UIImage())
+                                                                        .overlay(       Image(uiImage: UIImage(data: pet.imagePets ?? Data()) ?? UIImage())
                                                                                 .resizable()
                                                                                 .frame(width: 120, height: 100)
                                                                                 .clipShape(Circle())
-                                                                                
                                                                         )
-                                                                    
                                                                     VStack {
-                                                                        VStack(alignment : .leading, spacing: 10) {
+                                                                        VStack(alignment: .leading, spacing: 10) {
 
-                                                                            Text(pet.name_pets ?? "Meong" )
+                                                                            Text(pet.namePets ?? "Meong" )
                                                                                 .font(.system(size: 17, weight: .regular))
                                                                                 .frame(alignment: .topLeading)
                                                                                 .foregroundColor(.black)
-                                                                                
-
-                                                                            VStack() {
-                                                                  
-                                                                        ForEach(pet.reminderArray){ reminder in
-                                                                                    
+                                                                            VStack {
+                                                                                ForEach(pet.reminderArray) { reminder in
                                                                                     let dateNow = Date()
-                                                                                    
-                                                                                    
-                                                                                    if reminder.date_item ?? Date() > dateNow {
-                                                                                        
+                                                                                    if reminder.dateReminder ?? Date() > dateNow {
                                                                                         if reminder.label ?? "Unknown" == selectedLabelCategory.rawValue {
-                                                                                            Text("Upcoming grooming : \(reminder.date_item ?? Date(), style: .date)")
+                                                                                            Text("Upcoming grooming : \(reminder.dateReminder ?? Date(), style: .date)")
                                                                                                 .font(.system(size: 12, weight: .regular))
                                                                                                 .foregroundColor(.black)
 
                                                                                         } else {
-                                                                                            Text("Upcoming clean cage : \(reminder.date_item ?? Date(), style: .date)")
+                                                                                            Text("Upcoming clean cage : \(reminder.dateReminder ?? Date(), style: .date)")
                                                                                                 .font(.system(size: 12, weight: .regular))
                                                                                                 .foregroundColor(.black)
 
                                                                                         }
-                                                                                        
                                                                                     }
-                                                                                    
                                                                                 }
                                                                             }
                                                                                 Text("see activities...")
@@ -142,7 +102,6 @@ struct PetView: View {
                                                         .padding(.trailing, 10)
                                                     }
                                                 }
-                                                
                                             }
                                         }
                                 }
@@ -151,80 +110,57 @@ struct PetView: View {
                             }
                             .frame(height: 300)
                             .padding(.leading, 5)
-                            
                             Spacer()
                         }
-                        
                         Text("Dogs")
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .font(.system(.title2))
                             .padding(.leading, 15)
                             .foregroundColor(.black)
                         VStack {
-                            ScrollView(.vertical,showsIndicators: false) {
+                            ScrollView(.vertical, showsIndicators: false) {
                                 VStack(spacing: 15) {
-                                    
                                     ForEach(pets) { pet in
-                                        
-                                        if pet.pet_category == "Dog" {
-                                            
+                                        if pet.petCategory == "Dog" {
                                             NavigationLink(destination: DetailPetView(selectionPet: pet)) {
 
                                                 ZStack {
                                                     RoundedRectangle(cornerRadius: 5, style: .continuous)
                                                         .stroke(CustomColor.primaryColor, lineWidth: 2)
                                                         .frame(width: 359, height: 152)
-                                                    
-                                                    VStack() {
-                                                            
+                                                    VStack {
                                                             HStack {
-                                                                
-                                                                Circle()
-                                                                    .strokeBorder(Color(red: 216 / 255, green: 31 / 255, blue: 98 / 255),lineWidth: 2)
+                                                                Circle().strokeBorder(CustomColor.challengeFirstColor, lineWidth: 2)
                                                                     .frame(width: 100, height: 100)
                                                                     .overlay(
-                                                                        
-                                                                        
-                                                                            
-                                                                            Image(uiImage: UIImage(data: pet.image_pets ?? Data()) ?? UIImage())
+                                                                            Image(uiImage: UIImage(data: pet.imagePets ?? Data()) ?? UIImage())
                                                                             .resizable()
                                                                             .frame(width: 120, height: 100)
                                                                             .clipShape(Circle())
-                                                                            
-                                                                    )
-                                                                
+                                )
                                                                 VStack {
-                                                                    VStack(alignment : .leading, spacing: 10) {
+                                                                    VStack(alignment: .leading, spacing: 10) {
 
-                                                                        Text(pet.name_pets ?? "Guk Guk" )
+                                                                        Text(pet.namePets ?? "Guk Guk" )
                                                                             .font(.system(size: 17, weight: .regular))
                                                                             .frame(alignment: .topLeading)
                                                                             .foregroundColor(.black)
-                                                                            
-
-                                                                        VStack() {
-                                                                            
-                                                                            ForEach(pet.reminderArray){ reminder in
-                                                                                
+                                   VStack {
+                                       ForEach(pet.reminderArray) { reminder in
                                                                                 let dateNow = Date()
-                                                                                
-                                                                                
-                                                                                if reminder.date_item ?? Date() > dateNow {
-                                                                                    
+                                                                                if reminder.dateReminder ?? Date() > dateNow {
                                                                                     if reminder.label ?? "Unknown" == selectedLabelCategory.rawValue {
-                                                                                        Text("Upcoming grooming : \(reminder.date_item ?? Date(), style: .date)")
+                                                                                        Text("Upcoming grooming : \(reminder.dateReminder ?? Date(), style: .date)")
                                                                                             .font(.system(size: 12, weight: .regular))
                                                                                             .foregroundColor(.black)
 
                                                                                     } else {
-                                                                                        Text("Upcoming clean cage : \(reminder.date_item ?? Date(), style: .date)")
+                                                                                        Text("Upcoming clean cage : \(reminder.dateReminder ?? Date(), style: .date)")
                                                                                             .font(.system(size: 12, weight: .regular))
                                                                                             .foregroundColor(.black)
 
                                                                                     }
-                                                                                    
                                                                                 }
-                                                                                
                                                                             }
                                                                         }
                                                                             Text("see activities...")
@@ -238,9 +174,7 @@ struct PetView: View {
                                                     .padding(.trailing, 10)
                                                 }
                                             }
-                                            
                                         }
-                                        
                                     }
                                 }
                                 .padding(.top, 5)
@@ -249,15 +183,9 @@ struct PetView: View {
                             }
                             .frame(height: 200)
                             .padding(.leading, 5)
-                            
                             Spacer()
                         }
-                        
                     }
-                    // Spacer()
-                    
-                    //                        .padding(.leading, 10)
-                    //                        .listStyle(.plain)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button {
@@ -271,10 +199,8 @@ struct PetView: View {
                         }
                     }
                 }
-                
             }
             .navigationBarTitle("Pets", displayMode: .large)
-            
         }
         .navigationBarTitleDisplayMode(.large)
     }

@@ -17,20 +17,15 @@ class ScanViewModel: ObservableObject {
     @Published var imageSelected = UIImage()
     @Published var classificationLabel: String = ""
     @Published var confidencePercentage: String = ""
-    
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
     @Environment(\.managedObjectContext) var moc
-    
-    
     struct LoadingError: Error, Identifiable {
         let id = UUID()
         let error: Error
     }
-    
     @Published var modelLoadingError: LoadingError?
     @Published var modelLoaded = false
     private var model: FloofyModel?
-    
     func loadModel() {
         do {
             let configuration = MLModelConfiguration()
@@ -42,22 +37,18 @@ class ScanViewModel: ObservableObject {
             print("Error loading the model: \(error)")
         }
     }
-    
     func imageClassification(image: UIImage) {
         guard modelLoaded else {
             print("Model not loaded. Unable to perform image classification.")
             return
         }
-        
         guard let resizedImage = image.resizedTo(size: CGSize(width: 299, height: 299)),
               let buffer = resizedImage.toBuffer() else {
             return
         }
-        
         do {
             let output = try model?.prediction(image: buffer)
             self.classificationLabel = output?.classLabel ?? ""
-            
             if let confidence = output?.classLabelProbs[self.classificationLabel] {
                 let percentage = Int(confidence * 100)
                 self.confidencePercentage = "\(percentage)%"
@@ -78,30 +69,25 @@ class ScanViewModel: ObservableObject {
         model = nil
         modelLoadingError = nil
     }
-    
 }
 
 struct ScanView: View {
     @StateObject private var viewModel = ScanViewModel()
     @State private var showClassificationSheet = false
     @State private var selectedAnimal = ""
-    
     var body: some View {
         NavigationView {
             VStack {
-                
                 Image("onboarding1")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 393, height: 393)
-                
                 Text("Scan your cat's or dog’s skin to know the classification of ringworm and scabies diseases")
                     .bold()
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
                     .padding(.top, 16)
                     .foregroundColor(Color("PrimaryColor"))
-                
                 NavigationLink(
                     destination: ScanResult( classificationLabel: viewModel.classificationLabel, confidencePercentage: viewModel.confidencePercentage, imageSelected: viewModel.imageSelected),
                     isActive: $showClassificationSheet,

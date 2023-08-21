@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum AlertType {
+    case alertNotification
+    case alert
+    case none
+}

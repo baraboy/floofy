@@ -29,7 +29,6 @@ struct ArticleView: View {
 struct ArticleCard: View {
     @State private var isShowingModal = false
     var article: Article
-    
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             Image(article.imageName)
@@ -37,13 +36,11 @@ struct ArticleCard: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 360, height: 250)
                 .cornerRadius(10)
-            
             Rectangle()
                 .foregroundColor(Color.gray.opacity(0.7))
                 .frame(maxWidth: .infinity)
                 .padding(.top, 165)
-            
-            VStack() {
+            VStack {
                 Text(article.title)
                     .font(.headline)
                     .foregroundColor(.black)
@@ -64,56 +61,43 @@ struct ArticleCard: View {
 
 struct ArticleDetailView: View {
     var article: Article
-    
     var body: some View {
         VStack(alignment: .leading) {
-            ScrollView{
+            ScrollView {
                 Image(article.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 350, height: 250)
                     .cornerRadius(10)
                     .padding(.top, 20)
-                
-                HStack{
-                    
+                HStack {
                     Text("Image source: \(article.imageSource)")
                         .font(.caption)
                         .foregroundColor(.gray)
-                    
                     Spacer()
-                    
                 }.padding(.leading)
-                
                 Text(article.title)
                     .font(.headline)
                     .bold()
                     .padding()
-                
                 Text(article.para1)
                     .font(.body)
                     .padding()
-                
                 Text(article.para2)
                     .font(.body)
                     .padding()
-                
                 Text(article.para3)
                     .font(.body)
                     .padding()
-                
                 Text(article.para4)
                     .font(.body)
                     .padding()
-                
                 Text(article.para5)
                     .font(.body)
                     .padding()
-                
                 Text(article.para6)
                     .font(.body)
                     .padding()
-                
             }
         }
         .padding(.horizontal, 16)

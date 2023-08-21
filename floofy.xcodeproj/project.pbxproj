@@ -16,7 +16,7 @@
 		336B3A2B2A346BF400599A6C /* ScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A2A2A346BF400599A6C /* ScanResult.swift */; };
 		336B3A2D2A346C4800599A6C /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A2C2A346C4800599A6C /* ScanView.swift */; };
 		33708EFE2A2F812B000BAC2B /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33708EFD2A2F812B000BAC2B /* ArticleView.swift */; };
-		338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D472A21F7C7000778EE /* floofyApp.swift */; };
+		338C7D482A21F7C7000778EE /* FloofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D472A21F7C7000778EE /* FloofyApp.swift */; };
 		338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D492A21F7C7000778EE /* ContentView.swift */; };
 		338C7D4C2A21F7C8000778EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4B2A21F7C8000778EE /* Assets.xcassets */; };
 		338C7D4F2A21F7C8000778EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */; };
@@ -34,6 +34,7 @@
 		F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB582A2F728B0062F4B7 /* SplashView.swift */; };
 		F752BB5B2A31B32E0062F4B7 /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */; };
 		F7558FBE2A332CF1003746A9 /* DetailPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7558FBD2A332CF1003746A9 /* DetailPetView.swift */; };
+		F778FC662A9348DD00F0A620 /* ChallengeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC652A9348DD00F0A620 /* ChallengeData.swift */; };
 		F790BF6B2A31DBCE007CA255 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */; };
 		F790BF6E2A31E4B6007CA255 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6D2A31E4B6007CA255 /* CustomButton.swift */; };
 		F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793222A29136B00F5F5EC /* ReminderView.swift */; };
@@ -42,6 +43,7 @@
 		F797932B2A2B56FD00F5F5EC /* Reminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */; };
 		F797932D2A2B57A300F5F5EC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797932C2A2B57A300F5F5EC /* DataController.swift */; };
 		F79793312A2CC1FC00F5F5EC /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793302A2CC1FC00F5F5EC /* PetView.swift */; };
+		F7F48D8E2A8F4F6C001D1656 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F7F48D8D2A8F4F6C001D1656 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +57,7 @@
 		336B3A2C2A346C4800599A6C /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		33708EFD2A2F812B000BAC2B /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		338C7D442A21F7C7000778EE /* floofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		338C7D472A21F7C7000778EE /* floofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floofyApp.swift; sourceTree = "<group>"; };
+		338C7D472A21F7C7000778EE /* FloofyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloofyApp.swift; sourceTree = "<group>"; };
 		338C7D492A21F7C7000778EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		338C7D4B2A21F7C8000778EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		338C7D4E2A21F7C8000778EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		F752BB582A2F728B0062F4B7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
 		F7558FBD2A332CF1003746A9 /* DetailPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPetView.swift; sourceTree = "<group>"; };
+		F778FC652A9348DD00F0A620 /* ChallengeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeData.swift; sourceTree = "<group>"; };
 		F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		F790BF6D2A31E4B6007CA255 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F79793222A29136B00F5F5EC /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		F797932A2A2B56FD00F5F5EC /* Reminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reminder.xcdatamodel; sourceTree = "<group>"; };
 		F797932C2A2B57A300F5F5EC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		F79793302A2CC1FC00F5F5EC /* PetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetView.swift; sourceTree = "<group>"; };
+		F7F48D8D2A8F4F6C001D1656 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		338C7D3B2A21F7C7000778EE = {
 			isa = PBXGroup;
 			children = (
+				F7F48D8D2A8F4F6C001D1656 /* .swiftlint.yml */,
 				338C7D462A21F7C7000778EE /* floofy */,
 				338C7D452A21F7C7000778EE /* Products */,
 			);
@@ -133,7 +138,7 @@
 				3360C2272A363332009896AC /* FloofyModel.mlmodel */,
 				F790BF6C2A31DE05007CA255 /* Component */,
 				F79793242A2916C100F5F5EC /* Model */,
-				338C7D472A21F7C7000778EE /* floofyApp.swift */,
+				338C7D472A21F7C7000778EE /* FloofyApp.swift */,
 				336B3A232A346B6D00599A6C /* ImagePicker.swift */,
 				336B3A242A346B6D00599A6C /* LocationListView.swift */,
 				F778EB432A32C6AD007BDC6A /* View */,
@@ -160,6 +165,7 @@
 				F70CD32B2A34C12B002A9387 /* ChallengeView.swift */,
 				F70CD32F2A34D549002A9387 /* BadgesView.swift */,
 				F70CD3312A34DED3002A9387 /* GroomingInputView.swift */,
+				F778FC652A9348DD00F0A620 /* ChallengeData.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 				338C7D402A21F7C7000778EE /* Sources */,
 				338C7D412A21F7C7000778EE /* Frameworks */,
 				338C7D422A21F7C7000778EE /* Resources */,
+				F7F48D8C2A8F4EFF001D1656 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -284,6 +291,9 @@
 				Base,
 			);
 			mainGroup = 338C7D3B2A21F7C7000778EE;
+			packageReferences = (
+				F7F48D872A8F4CAF001D1656 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = 338C7D452A21F7C7000778EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F48D8E2A8F4F6C001D1656 /* .swiftlint.yml in Resources */,
 				338C7D4F2A21F7C8000778EE /* Preview Assets.xcassets in Resources */,
 				338C7D4C2A21F7C8000778EE /* Assets.xcassets in Resources */,
 			);
@@ -305,12 +316,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F7F48D8C2A8F4EFF001D1656 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		338C7D402A21F7C7000778EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F70CD3662A35B4EB002A9387 /* ReminderItem+CoreDataProperties.swift in Sources */,
+				F778FC662A9348DD00F0A620 /* ChallengeData.swift in Sources */,
 				F797932D2A2B57A300F5F5EC /* DataController.swift in Sources */,
 				338C7D4A2A21F7C7000778EE /* ContentView.swift in Sources */,
 				F70CD32E2A34CF9B002A9387 /* CustomColor.swift in Sources */,
@@ -319,7 +351,7 @@
 				F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */,
 				336B3A262A346B6D00599A6C /* ImagePicker.swift in Sources */,
 				F70CD3642A35B4EB002A9387 /* CobaItem+CoreDataProperties.swift in Sources */,
-				338C7D482A21F7C7000778EE /* floofyApp.swift in Sources */,
+				338C7D482A21F7C7000778EE /* FloofyApp.swift in Sources */,
 				F70CD3652A35B4EB002A9387 /* ReminderItem+CoreDataClass.swift in Sources */,
 				F790BF6E2A31E4B6007CA255 /* CustomButton.swift in Sources */,
 				F70CD3632A35B4EB002A9387 /* CobaItem+CoreDataClass.swift in Sources */,
@@ -557,6 +589,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7F48D872A8F4CAF001D1656 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.52.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */ = {

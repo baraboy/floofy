@@ -9,24 +9,22 @@
 import Foundation
 import CoreData
 
-
 extension CobaItem {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CobaItem> {
         return NSFetchRequest<CobaItem>(entityName: "CobaItem")
     }
 
-    @NSManaged public var image_coba: Data?
-    @NSManaged public var date_coba: Date?
-    @NSManaged public var description_coba: String?
+    @NSManaged public var imageGrooming: Data?
+    @NSManaged public var dateGrooming: Date?
+    @NSManaged public var descriptionGrooming: String?
     @NSManaged public var pets: PetsItem?
-    
     public var unWrappedDescription: String {
-        description_coba ?? "Unknown"
+        descriptionGrooming ?? "Unknown"
     }
 
 }
 
-extension CobaItem : Identifiable {
+extension CobaItem: Identifiable {
 
 }
