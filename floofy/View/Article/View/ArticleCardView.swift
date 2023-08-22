@@ -1,5 +1,5 @@
 //
-//  ArticleCard.swift
+//  ArticleCardView.swift
 //  floofy
 //
 //  Created by Rizky Dwi Hadisaputro on 18/08/23.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ArticleCard: View {
+struct ArticleCardView: View {
     @State private var isShowingModal = false
-    var article: ArticleData
+    var article: ArticleModel
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {

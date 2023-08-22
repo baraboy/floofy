@@ -1,14 +1,14 @@
 //
-//  ScanResult.swift
+//  ScanResultView.swift
 //  floofy
 //
-//  Created by Rizky Dwi Hadisaputro on 10/06/23.
+//  Created by Rizky Dwi Hadisaputro on 22/08/23.
 //
 
 import SwiftUI
 
-struct ScanResult: View {
-
+struct ScanResultView: View {
+    
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
     var classificationLabel: String
     var confidencePercentage: String
@@ -16,7 +16,7 @@ struct ScanResult: View {
     @State private var showAlert = false
     @State var petSelected: PetsItem?
     @Environment(\.presentationMode) var presentationMode
-
+    
     var body: some View {
         VStack {
             Image(uiImage: imageSelected)
@@ -97,9 +97,9 @@ struct ScanResult: View {
     }
 }
 
-struct ScanResult_Previews: PreviewProvider {
+struct ScanResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ScanResult(
+        ScanResultView(
             classificationLabel: "Cat",
             confidencePercentage: "80%",
             imageSelected: UIImage()

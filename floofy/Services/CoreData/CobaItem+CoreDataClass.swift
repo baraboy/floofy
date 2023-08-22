@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(CobaItem)
-public class CobaItem: NSManagedObject {
+@objc(PetActivityItem)
+public class PetActivityItem: NSManagedObject {
 
 }

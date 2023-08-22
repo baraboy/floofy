@@ -38,8 +38,8 @@ extension PetsItem {
         }
     }
 
-    public var activityArray: [CobaItem] {
-        let reminderSet = activity as? Set<CobaItem> ?? []
+    public var activityArray: [PetActivityItem] {
+        let reminderSet = activity as? Set<PetActivityItem> ?? []
 
         return reminderSet.sorted {
             $0.unWrappedDescription < $1.unWrappedDescription
@@ -69,10 +69,10 @@ extension PetsItem {
 extension PetsItem {
 
     @objc(addActivityObject:)
-    @NSManaged public func addToActivity(_ value: CobaItem)
+    @NSManaged public func addToActivity(_ value: PetActivityItem)
 
     @objc(removeActivityObject:)
-    @NSManaged public func removeFromActivity(_ value: CobaItem)
+    @NSManaged public func removeFromActivity(_ value: PetActivityItem)
 
     @objc(addActivity:)
     @NSManaged public func addToActivity(_ values: NSSet)

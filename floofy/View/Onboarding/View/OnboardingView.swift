@@ -14,11 +14,11 @@ struct OnboardingView: View {
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
 
     private let onboardingStep = [
-        OnboardingStep(image: "onboarding1",
+        OnboardingModel(image: "onboarding1",
                        description: "Scan your cat or dog’s skin to know the classification of ringworm and scabies diseases"),
-        OnboardingStep(image: "onboarding2",
+        OnboardingModel(image: "onboarding2",
                        description: "Get notifications about your cat's or dog's schedule that you have set in advance."),
-        OnboardingStep(image: "onboarding3",
+        OnboardingModel(image: "onboarding3",
                        description: "With the missions, keeping your pets healthy will never be this fun!")]
 
     var body: some View {

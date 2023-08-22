@@ -14,7 +14,7 @@ struct ArticleView: View {
                 ScrollView {
                     LazyVStack(spacing: 18) {
                         ForEach(0..<articles.count, id: \.self) { index in
-                            ArticleCard(article: articles[index])
+                            ArticleCardView(article: articles[index])
                         }
                     }
                     .padding()

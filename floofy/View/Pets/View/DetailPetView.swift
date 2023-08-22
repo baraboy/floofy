@@ -45,7 +45,7 @@ struct DetailPetView: View {
                                         List {
                                             ForEach(selectionPet.activityArray) { activityPet in
                                                 HStack {
-                                                    Image(uiImage: UIImage(data: activityPet.imageCoba ?? Data()) ?? UIImage())
+                                                    Image(uiImage: UIImage(data: activityPet.imageActivity ?? Data()) ?? UIImage())
                                                         .resizable()
                                                         .frame(width: 66, height: 52)
                                                         .scaledToFit()
@@ -55,7 +55,7 @@ struct DetailPetView: View {
                                                             .font(.system(size: 17, weight: .bold))
                                                             .foregroundColor(.black)
 
-                                                        Text(activityPet.descriptionCoba ?? "Unknown")
+                                                        Text(activityPet.descriptionActivity ?? "Unknown")
                                                             .font(.system(size: 15, weight: .regular))
                                                             .foregroundColor(.black)
 
@@ -63,7 +63,7 @@ struct DetailPetView: View {
 
                                                     Spacer()
 
-                                                    Text(activityPet.dateCoba ?? Date(), style: .date)
+                                                    Text(activityPet.dateActivity ?? Date(), style: .date)
                                                         .font(.system(size: 12, weight: .regular))
                                                         .foregroundColor(.gray)
                                                 }

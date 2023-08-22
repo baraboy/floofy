@@ -28,7 +28,7 @@ struct ScanView: View {
                     .foregroundColor(Color("PrimaryColor"))
 
                 NavigationLink(
-                    destination: ScanResult( classificationLabel: viewModel.classificationLabel,
+                    destination: ScanResultView( classificationLabel: viewModel.classificationLabel,
                                              confidencePercentage: viewModel.confidencePercentage,
                                              imageSelected: viewModel.imageSelected),
                     isActive: $showClassificationSheet,

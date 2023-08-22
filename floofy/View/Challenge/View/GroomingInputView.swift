@@ -136,10 +136,10 @@ struct GroomingInputView: View {
     }
 
     func saveToCoreData() {
-        let activity = CobaItem(context: moc)
-        activity.dateCoba = Date()
-        activity.descriptionCoba = textTextfield
-        activity.imageCoba = selectedImageData
+        let activity = PetActivityItem(context: moc)
+        activity.dateActivity = Date()
+        activity.descriptionActivity = textTextfield
+        activity.imageActivity = selectedImageData
         petSelected.addToActivity(activity)
         try? moc.save()
     }
