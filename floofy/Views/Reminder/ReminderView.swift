@@ -11,8 +11,8 @@ import SwiftUI
 struct ReminderView: View {
     @Environment(\.managedObjectContext) var moc
     @StateObject var pet: PetsItem
-    @State var showView = false
-    @State var showViewEdit = false
+    @State private var showView = false
+    @State private var showViewEdit = false
     @State private var showingAlert = false
     var body: some View {
         NavigationStack {

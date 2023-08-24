@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SplashView: View {
-    @State var isActive: Bool = false
+    @State private var isActive: Bool = false
     @AppStorage("sign_in") var wasSigned: Bool = false
     var body: some View {
         ZStack {

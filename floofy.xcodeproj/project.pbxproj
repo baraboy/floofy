@@ -13,7 +13,7 @@
 		336B3A262A346B6D00599A6C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A232A346B6D00599A6C /* ImagePicker.swift */; };
 		336B3A272A346B6D00599A6C /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A242A346B6D00599A6C /* LocationListView.swift */; };
 		336B3A282A346B6D00599A6C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A252A346B6D00599A6C /* UIImage+Extensions.swift */; };
-		336B3A2B2A346BF400599A6C /* ScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A2A2A346BF400599A6C /* ScanResult.swift */; };
+		336B3A2B2A346BF400599A6C /* ScanResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A2A2A346BF400599A6C /* ScanResultView.swift */; };
 		336B3A2D2A346C4800599A6C /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B3A2C2A346C4800599A6C /* ScanView.swift */; };
 		33708EFE2A2F812B000BAC2B /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33708EFD2A2F812B000BAC2B /* ArticleView.swift */; };
 		338C7D482A21F7C7000778EE /* FloofyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7D472A21F7C7000778EE /* FloofyApp.swift */; };
@@ -31,15 +31,16 @@
 		F70CD3642A35B4EB002A9387 /* CobaItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CD35E2A35B4EB002A9387 /* CobaItem+CoreDataProperties.swift */; };
 		F70CD3652A35B4EB002A9387 /* ReminderItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CD35F2A35B4EB002A9387 /* ReminderItem+CoreDataClass.swift */; };
 		F70CD3662A35B4EB002A9387 /* ReminderItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CD3602A35B4EB002A9387 /* ReminderItem+CoreDataProperties.swift */; };
+		F75152D42A978E1400F532EC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75152D32A978E1400F532EC /* Location.swift */; };
 		F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB582A2F728B0062F4B7 /* SplashView.swift */; };
 		F752BB5B2A31B32E0062F4B7 /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */; };
 		F7558FBE2A332CF1003746A9 /* DetailPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7558FBD2A332CF1003746A9 /* DetailPetView.swift */; };
 		F778FC662A9348DD00F0A620 /* ChallengeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC652A9348DD00F0A620 /* ChallengeData.swift */; };
 		F778FC692A93B4DF00F0A620 /* CardViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC682A93B4DF00F0A620 /* CardViewItem.swift */; };
-		F778FC6B2A93B53400F0A620 /* CircleViewBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC6A2A93B53400F0A620 /* CircleViewBadge.swift */; };
+		F778FC6B2A93B53400F0A620 /* CircleBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC6A2A93B53400F0A620 /* CircleBadgeView.swift */; };
 		F778FC6D2A93B6FF00F0A620 /* CardPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F778FC6C2A93B6FF00F0A620 /* CardPetView.swift */; };
 		F790BF6B2A31DBCE007CA255 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */; };
-		F790BF6E2A31E4B6007CA255 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6D2A31E4B6007CA255 /* CustomButton.swift */; };
+		F790BF6E2A31E4B6007CA255 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790BF6D2A31E4B6007CA255 /* CustomButtonView.swift */; };
 		F79793232A29136B00F5F5EC /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793222A29136B00F5F5EC /* ReminderView.swift */; };
 		F79793262A2916D200F5F5EC /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793252A2916D200F5F5EC /* ReminderModel.swift */; };
 		F79793282A29A33E00F5F5EC /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79793272A29A33E00F5F5EC /* AddReminderView.swift */; };
@@ -56,7 +57,7 @@
 		336B3A232A346B6D00599A6C /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		336B3A242A346B6D00599A6C /* LocationListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		336B3A252A346B6D00599A6C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		336B3A2A2A346BF400599A6C /* ScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResult.swift; sourceTree = "<group>"; };
+		336B3A2A2A346BF400599A6C /* ScanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultView.swift; sourceTree = "<group>"; };
 		336B3A2C2A346C4800599A6C /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		33708EFD2A2F812B000BAC2B /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		338C7D442A21F7C7000778EE /* floofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,15 +76,16 @@
 		F70CD35E2A35B4EB002A9387 /* CobaItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CobaItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F70CD35F2A35B4EB002A9387 /* ReminderItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F70CD3602A35B4EB002A9387 /* ReminderItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F75152D32A978E1400F532EC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F752BB582A2F728B0062F4B7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F752BB5A2A31B32E0062F4B7 /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
 		F7558FBD2A332CF1003746A9 /* DetailPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPetView.swift; sourceTree = "<group>"; };
 		F778FC652A9348DD00F0A620 /* ChallengeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeData.swift; sourceTree = "<group>"; };
 		F778FC682A93B4DF00F0A620 /* CardViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewItem.swift; sourceTree = "<group>"; };
-		F778FC6A2A93B53400F0A620 /* CircleViewBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewBadge.swift; sourceTree = "<group>"; };
+		F778FC6A2A93B53400F0A620 /* CircleBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBadgeView.swift; sourceTree = "<group>"; };
 		F778FC6C2A93B6FF00F0A620 /* CardPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPetView.swift; sourceTree = "<group>"; };
 		F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
-		F790BF6D2A31E4B6007CA255 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		F790BF6D2A31E4B6007CA255 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		F79793222A29136B00F5F5EC /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		F79793252A2916D200F5F5EC /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		F79793272A29A33E00F5F5EC /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
@@ -107,7 +109,7 @@
 		336B3A292A346BDE00599A6C /* Scan */ = {
 			isa = PBXGroup;
 			children = (
-				336B3A2A2A346BF400599A6C /* ScanResult.swift */,
+				336B3A2A2A346BF400599A6C /* ScanResultView.swift */,
 				336B3A2C2A346C4800599A6C /* ScanView.swift */,
 			);
 			path = Scan;
@@ -133,26 +135,17 @@
 		338C7D462A21F7C7000778EE /* floofy */ = {
 			isa = PBXGroup;
 			children = (
-				F778FC672A93A9CA00F0A620 /* ViewModel */,
-				F70CD35B2A35B4EB002A9387 /* PetsItem+CoreDataClass.swift */,
-				F70CD35C2A35B4EB002A9387 /* PetsItem+CoreDataProperties.swift */,
-				F70CD35D2A35B4EB002A9387 /* CobaItem+CoreDataClass.swift */,
-				F70CD35E2A35B4EB002A9387 /* CobaItem+CoreDataProperties.swift */,
-				F70CD35F2A35B4EB002A9387 /* ReminderItem+CoreDataClass.swift */,
-				F70CD3602A35B4EB002A9387 /* ReminderItem+CoreDataProperties.swift */,
-				336B3A252A346B6D00599A6C /* UIImage+Extensions.swift */,
-				336B3A212A346AFA00599A6C /* RingwormScabiesModel.mlmodel */,
-				3360C2272A363332009896AC /* FloofyModel.mlmodel */,
-				F790BF6C2A31DE05007CA255 /* Component */,
-				F79793242A2916C100F5F5EC /* Model */,
 				338C7D472A21F7C7000778EE /* FloofyApp.swift */,
-				336B3A232A346B6D00599A6C /* ImagePicker.swift */,
-				336B3A242A346B6D00599A6C /* LocationListView.swift */,
-				F778EB432A32C6AD007BDC6A /* View */,
 				338C7D492A21F7C7000778EE /* ContentView.swift */,
-				F797932C2A2B57A300F5F5EC /* DataController.swift */,
-				338C7D4B2A21F7C8000778EE /* Assets.xcassets */,
+				F778EB432A32C6AD007BDC6A /* Views */,
+				F79793242A2916C100F5F5EC /* Models */,
+				F72458792A94931600B2E9CA /* Helper */,
+				F72458772A9492E300B2E9CA /* Extension */,
+				F790BF6C2A31DE05007CA255 /* Component */,
+				F724587B2A94A20600B2E9CA /* CoreData */,
+				F724587E2A94A29B00B2E9CA /* MachineLearningModel */,
 				338C7D4D2A21F7C8000778EE /* Preview Content */,
+				338C7D4B2A21F7C8000778EE /* Assets.xcassets */,
 				F79793292A2B56FD00F5F5EC /* Reminder.xcdatamodeld */,
 			);
 			path = floofy;
@@ -177,9 +170,49 @@
 			path = Challenge;
 			sourceTree = "<group>";
 		};
-		F778EB432A32C6AD007BDC6A /* View */ = {
+		F72458772A9492E300B2E9CA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				336B3A252A346B6D00599A6C /* UIImage+Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F72458792A94931600B2E9CA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				336B3A232A346B6D00599A6C /* ImagePicker.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F724587B2A94A20600B2E9CA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F797932C2A2B57A300F5F5EC /* DataController.swift */,
+				F70CD35B2A35B4EB002A9387 /* PetsItem+CoreDataClass.swift */,
+				F70CD35C2A35B4EB002A9387 /* PetsItem+CoreDataProperties.swift */,
+				F70CD35D2A35B4EB002A9387 /* CobaItem+CoreDataClass.swift */,
+				F70CD35E2A35B4EB002A9387 /* CobaItem+CoreDataProperties.swift */,
+				F70CD35F2A35B4EB002A9387 /* ReminderItem+CoreDataClass.swift */,
+				F70CD3602A35B4EB002A9387 /* ReminderItem+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F724587E2A94A29B00B2E9CA /* MachineLearningModel */ = {
+			isa = PBXGroup;
+			children = (
+				336B3A212A346AFA00599A6C /* RingwormScabiesModel.mlmodel */,
+				3360C2272A363332009896AC /* FloofyModel.mlmodel */,
+			);
+			path = MachineLearningModel;
+			sourceTree = "<group>";
+		};
+		F778EB432A32C6AD007BDC6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				336B3A242A346B6D00599A6C /* LocationListView.swift */,
 				F70CD32A2A34B74D002A9387 /* Challenge */,
 				336B3A292A346BDE00599A6C /* Scan */,
 				F778EB482A32C733007BDC6A /* OnBoarding */,
@@ -188,7 +221,7 @@
 				F778EB452A32C6F1007BDC6A /* Reminder */,
 				F778EB442A32C6B8007BDC6A /* Pets */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F778EB442A32C6B8007BDC6A /* Pets */ = {
@@ -235,32 +268,26 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
-		F778FC672A93A9CA00F0A620 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		F790BF6C2A31DE05007CA255 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				F790BF6A2A31DBCE007CA255 /* TextFieldClearButton.swift */,
-				F790BF6D2A31E4B6007CA255 /* CustomButton.swift */,
+				F790BF6D2A31E4B6007CA255 /* CustomButtonView.swift */,
 				F70CD32D2A34CF9B002A9387 /* CustomColor.swift */,
 				F778FC682A93B4DF00F0A620 /* CardViewItem.swift */,
-				F778FC6A2A93B53400F0A620 /* CircleViewBadge.swift */,
+				F778FC6A2A93B53400F0A620 /* CircleBadgeView.swift */,
 				F778FC6C2A93B6FF00F0A620 /* CardPetView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
 		};
-		F79793242A2916C100F5F5EC /* Model */ = {
+		F79793242A2916C100F5F5EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F79793252A2916D200F5F5EC /* ReminderModel.swift */,
+				F75152D32A978E1400F532EC /* Location.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,7 +398,8 @@
 				F70CD3642A35B4EB002A9387 /* CobaItem+CoreDataProperties.swift in Sources */,
 				338C7D482A21F7C7000778EE /* FloofyApp.swift in Sources */,
 				F70CD3652A35B4EB002A9387 /* ReminderItem+CoreDataClass.swift in Sources */,
-				F790BF6E2A31E4B6007CA255 /* CustomButton.swift in Sources */,
+				F790BF6E2A31E4B6007CA255 /* CustomButtonView.swift in Sources */,
+				F75152D42A978E1400F532EC /* Location.swift in Sources */,
 				F778FC6D2A93B6FF00F0A620 /* CardPetView.swift in Sources */,
 				F70CD3632A35B4EB002A9387 /* CobaItem+CoreDataClass.swift in Sources */,
 				F752BB5B2A31B32E0062F4B7 /* AddPetView.swift in Sources */,
@@ -391,9 +419,9 @@
 				F70CD3302A34D549002A9387 /* BadgesView.swift in Sources */,
 				336B3A2D2A346C4800599A6C /* ScanView.swift in Sources */,
 				F70CD3612A35B4EB002A9387 /* PetsItem+CoreDataClass.swift in Sources */,
-				F778FC6B2A93B53400F0A620 /* CircleViewBadge.swift in Sources */,
+				F778FC6B2A93B53400F0A620 /* CircleBadgeView.swift in Sources */,
 				F752BB592A2F728B0062F4B7 /* SplashView.swift in Sources */,
-				336B3A2B2A346BF400599A6C /* ScanResult.swift in Sources */,
+				336B3A2B2A346BF400599A6C /* ScanResultView.swift in Sources */,
 				3360C2282A363332009896AC /* FloofyModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

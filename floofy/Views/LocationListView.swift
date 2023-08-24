@@ -9,13 +9,6 @@ import SwiftUI
 import CoreLocation
 import MapKit
 
-struct Location: Identifiable {
-    let id = UUID()
-    let name: String
-    let latitude: Double
-    let longitude: Double
-}
-
 struct LocationListView: View {
     @StateObject private var locationManager = LocationManager()
     let locations: [Location] = [

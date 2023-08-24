@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct CustomButton: View {
+struct CustomButtonView: View {
     var text: String
     var clicked: (() -> Void)
     var body: some View {

@@ -9,13 +9,13 @@ import SwiftUI
 import CoreData
 
 struct ChallengeView: View {
-    @State private var showView = false
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
     @FetchRequest(sortDescriptors: []) private var grooming: FetchedResults<CobaItem>
-    @State var countCoreDataCoba: Int = 0
+    @State private var showView = false
+    @State private var countCoreDataCoba: Int = 0
+    @State private var alertType: AlertType = .none
     @State private var showingFirstAlert: Bool = false
-    @State var alertType: AlertType = .none
     var body: some View {
         NavigationStack {
             VStack(spacing: 25) {

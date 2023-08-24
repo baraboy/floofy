@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct ScanResult: View {
+struct ScanResultView: View {
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
     var classificationLabel: String
     var confidencePercentage: String
     var imageSelected: UIImage
     @State private var showAlert = false
-    @State var petSelected: PetsItem?
+    @State private var petSelected: PetsItem?
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack {
@@ -89,7 +89,7 @@ struct ScanResult: View {
 
 struct ScanResult_Previews: PreviewProvider {
     static var previews: some View {
-        ScanResult(
+        ScanResultView(
             classificationLabel: "Cat",
             confidencePercentage: "80%",
             imageSelected: UIImage()

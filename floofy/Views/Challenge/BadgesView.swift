@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BadgesView: View {
-    @State var countCoreDataCoba: Int = 0
+    @State private var countCoreDataCoba: Int = 0
     @FetchRequest(sortDescriptors: []) private var coba: FetchedResults<CobaItem>
     var body: some View {
         NavigationStack {
@@ -25,17 +25,17 @@ struct BadgesView: View {
                                     Spacer()
                                     HStack {
                                         Spacer()
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges1", nameBadges: "bathBadges1")
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges2", nameBadges: "bathBadges2")
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges3", nameBadges: "bathBadges3")
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges1", nameBadges: "bathBadges1")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges2", nameBadges: "bathBadges2")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges3", nameBadges: "bathBadges3")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
                                         Spacer()
                                     }
                                     .padding(.top, 10)
                                     HStack {
                                         Spacer()
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges6", nameBadges: "bathBadges6")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges6", nameBadges: "bathBadges6")
                                         Spacer()
                                     }
                                     Spacer()
@@ -55,9 +55,9 @@ struct BadgesView: View {
                                 VStack(spacing: 30) {
                                     HStack {
                                         Spacer()
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
-                                        CircleViewBadge(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
+                                        CircleBadgeView(count: coba.count, nameLockImage: "lockBadges4", nameBadges: "bathBadges4")
                                         Spacer()
                                     }
                                     .padding(.top, 30)
@@ -71,9 +71,8 @@ struct BadgesView: View {
             .accentColor(Color("PrimaryColor"))
             .padding(.leading, 10)
             Spacer()
-            .navigationTitle("Badges")
+                .navigationTitle("Badges")
         }
-
     }
 }
 

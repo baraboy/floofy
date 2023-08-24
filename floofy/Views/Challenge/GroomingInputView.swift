@@ -10,11 +10,15 @@ import PhotosUI
 import CoreData
 
 struct GroomingInputView: View {
-    @State var textTextfield = ""
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
-    @State var petSelected: PetsItem
+    @State private var petSelected: PetsItem
+    @State private var selectedItem: PhotosPickerItem?
+    @State private var textTextfield = ""
+    @State private var selectedImageData: Data?
+    @State private var repeatReminderIndex = 0
+    var repeatReminderSelection = ["Weekly", "Monthly"]
     init(moc: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<PetsItem> = PetsItem.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \PetsItem.namePets, ascending: true)]
@@ -27,10 +31,6 @@ struct GroomingInputView: View {
             fatalError("Uh, fetch problem")
         }
     }
-    @State private var repeatReminderIndex = 0
-    var repeatReminderSelection = ["Weekly", "Monthly"]
-    @State private var selectedItem: PhotosPickerItem?
-    @State private var selectedImageData: Data?
     var body: some View {
         VStack {
             Spacer()
@@ -101,7 +101,7 @@ struct GroomingInputView: View {
                 .shadow(radius: 3)
             }
             Spacer()
-            CustomButton(text: "Done") {
+            CustomButtonView(text: "Done") {
                 saveToCoreData()
                 dismiss()
             }

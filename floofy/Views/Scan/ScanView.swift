@@ -10,22 +10,22 @@ import CoreML
 import Vision
 
 class ScanViewModel: ObservableObject {
-    @Published var changeProfileImage = false
+    @Environment(\.managedObjectContext) var moc
     @Published var openSheet = true
+    @Published var modelLoaded = false
     @Published var showImagePicker = false
-    @Published var sourceType: UIImagePickerController.SourceType = .camera
     @Published var imageSelected = UIImage()
+    @Published var changeProfileImage = false
+    @Published var modelLoadingError: LoadingError?
     @Published var classificationLabel: String = ""
     @Published var confidencePercentage: String = ""
+    @Published var sourceType: UIImagePickerController.SourceType = .camera
     @FetchRequest(sortDescriptors: []) private var pets: FetchedResults<PetsItem>
-    @Environment(\.managedObjectContext) var moc
+    private var model: FloofyModel?
     struct LoadingError: Error, Identifiable {
         let id = UUID()
         let error: Error
     }
-    @Published var modelLoadingError: LoadingError?
-    @Published var modelLoaded = false
-    private var model: FloofyModel?
     func loadModel() {
         do {
             let configuration = MLModelConfiguration()
@@ -89,7 +89,7 @@ struct ScanView: View {
                     .padding(.top, 16)
                     .foregroundColor(Color("PrimaryColor"))
                 NavigationLink(
-                    destination: ScanResult( classificationLabel: viewModel.classificationLabel, confidencePercentage: viewModel.confidencePercentage, imageSelected: viewModel.imageSelected),
+                    destination: ScanResultView( classificationLabel: viewModel.classificationLabel, confidencePercentage: viewModel.confidencePercentage, imageSelected: viewModel.imageSelected),
                     isActive: $showClassificationSheet,
                     label: { EmptyView() }
                 )

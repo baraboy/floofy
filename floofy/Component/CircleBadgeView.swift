@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct CircleViewBadge: View {
+struct CircleBadgeView: View {
     let count: Int
     let nameLockImage: String
     let nameBadges: String

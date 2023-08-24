@@ -23,15 +23,15 @@ enum RepeatSelection: String, CaseIterable, Identifiable {
 
 struct AddReminderView: View {
     @Environment(\.managedObjectContext) var moc
-    @StateObject var pet: PetsItem
     @Environment(\.dismiss) var dismiss
-    @State var selectionExample: Category = .grooming
-    @State var selectionRepeat: RepeatSelection = .weekly
+    @StateObject var pet: PetsItem
     @State private var dateReminder = Date.now
-    @State private var repeatReminderIndex = 0
-    var repeatReminderSelection = ["Weekly", "Monthly"]
     @State private var soundNameIndex = 0
+    @State private var repeatReminderIndex = 0
+    @State private var selectionExample: Category = .grooming
+    @State private var selectionRepeat: RepeatSelection = .weekly
     var soundNameSelection = ["Radar"]
+    var repeatReminderSelection = ["Weekly", "Monthly"]
     var body: some View {
         NavigationStack {
             VStack {
@@ -69,7 +69,7 @@ struct AddReminderView: View {
                 }.navigationTitle("Add Reminder")
                     .shadow(radius: 2)
                     .scrollContentBackground(.hidden)
-                CustomButton(text: "Add Reminder") {
+                CustomButtonView(text: "Add Reminder") {
                     saveRemindertoCoreData()
 
                     dismiss()

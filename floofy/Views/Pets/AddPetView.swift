@@ -16,14 +16,14 @@ enum Pets: String, CaseIterable, Identifiable {
 }
 
 struct AddPetView: View {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var pets: FetchedResults<PetsItem>
-    @Environment(\.dismiss) var dismiss
 
-    @State var namePet: String = ""
-    @State var selectionPets: Pets = .dog
-    @State private var selectedItem: PhotosPickerItem?
+    @State private var namePet: String = ""
+    @State private var selectionPets: Pets = .dog
     @State private var selectedImageData: Data?
+    @State private var selectedItem: PhotosPickerItem?
     var checker: Bool = false
     var body: some View {
         NavigationStack {
@@ -82,7 +82,7 @@ struct AddPetView: View {
                 .padding(.leading, 15)
                 .padding(.trailing, 15)
                 Spacer()
-                CustomButton(text: "Add Pet") {
+                CustomButtonView(text: "Add Pet") {
                     saveDatatoCoreData()
                 }
                 .disabled(namePet.isEmpty)

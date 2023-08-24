@@ -22,12 +22,6 @@ extension PetsItem {
     @NSManaged public var petCategory: String?
     @NSManaged public var reminder: NSSet?
     @NSManaged public var activity: NSSet?
-//    public var unWrappedImagePets: Data {
-//        
-//        let imageData = image_pets.
-//        
-//        image_pets ?? UIImage(named: "addImage")
-//    }
     public var reminderArray: [ReminderItem] {
         let reminderSet = reminder as? Set<ReminderItem> ?? []
         return reminderSet.sorted {
